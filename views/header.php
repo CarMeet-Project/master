@@ -6,6 +6,4 @@
                     <li><a href="about-us">ABOUT</a></li>
                 </ul>
             </nav>
-            <h1 class="brand-name brand-name-large">carmeet</h1>
-            <img src="Images/mvm.png" alt="">
         </header>
