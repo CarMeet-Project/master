@@ -1,16 +1,10 @@
-<?php
-
-
- ?>
-
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Multiversum</title>
+        <title>Multiversum | About</title>
         <meta name="description" content="This is the description">
-        <link rel="stylesheet" href="css/styles.css?v=<?php echo time(); ?>" />
+        <link rel="stylesheet" href="css/styles.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <title>Home</title>
     </head>
     <body>
         <header class="main-header">
@@ -18,25 +12,21 @@
                 <ul>
                     <li><a href="index.php">HOME</a></li>
                     <li><a href="store">STORE</a></li>
-                    <li><a href="about-us">ABOUT</a></li>
+                    <li><a href="AboutUs">ABOUT</a></li>
                 </ul>
             </nav>
             <h1 class="brand-name brand-name-large">Multiversum</h1>
-            <img src="Images/mvm.png" alt="">
         </header>
+
         <section class="content-section container">
-            <h2 class="section-header">Producten</h2>
-            <div>
-                
-            </div>
+
         </section>
+
         <footer class="main-footer">
             <div class="container main-footer-container">
                 <h3 class="brand-name">Multiversum</h3>
             </div>
         </footer>
-
-
         <style media="screen">
             @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
             @import url("https://fonts.googleapis.com/css?family=Metal+Mania");
@@ -371,12 +361,5 @@
             }
 
         </style>
-        <div class="">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        </div>
     </body>
 </html>

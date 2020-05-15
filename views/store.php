@@ -1,20 +1,15 @@
-<?php
-
-
- ?>
-
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Multiversum</title>
+        <title>Multiversum | Store</title>
         <meta name="description" content="This is the description">
         <link rel="stylesheet" href="css/styles.css?v=<?php echo time(); ?>" />
+        <script src="js/store.js" async></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <title>Home</title>
     </head>
     <body>
         <header class="main-header">
-            <nav class="nav main-nav">
+            <nav class="main-nav nav">
                 <ul>
                     <li><a href="index.php">HOME</a></li>
                     <li><a href="store">STORE</a></li>
@@ -22,21 +17,85 @@
                 </ul>
             </nav>
             <h1 class="brand-name brand-name-large">Multiversum</h1>
-            <img src="Images/mvm.png" alt="">
         </header>
-        <section class="content-section container">
-            <h2 class="section-header">Producten</h2>
-            <div>
-                
+        <section class="container content-section">
+            <h2 class="section-header">MUSIC</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">Album 1</span>
+                    <img class="shop-item-image" src="Images/Album 1.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$12.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Album 2</span>
+                    <img class="shop-item-image" src="Images/Album 2.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$14.99</span>
+                        <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Album 3</span>
+                    <img class="shop-item-image" src="Images/Album 3.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$9.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Album 4</span>
+                    <img class="shop-item-image" src="Images/Album 4.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$19.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
             </div>
+        </section>
+        <section class="container content-section">
+            <h2 class="section-header">MERCH</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">T-Shirt</span>
+                    <img class="shop-item-image" src="Images/Shirt.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$19.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Coffee Cup</span>
+                    <img class="shop-item-image" src="Images/Cofee.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$6.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container content-section">
+            <h2 class="section-header">CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">$0</span>
+            </div>
+            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
         </section>
         <footer class="main-footer">
             <div class="container main-footer-container">
                 <h3 class="brand-name">Multiversum</h3>
             </div>
         </footer>
-
-
         <style media="screen">
             @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
             @import url("https://fonts.googleapis.com/css?family=Metal+Mania");
@@ -371,12 +430,6 @@
             }
 
         </style>
-        <div class="">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        </div>
     </body>
 </html>
