@@ -6,35 +6,32 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Multiversum</title>
+        <title>carmeet</title>
         <meta name="description" content="This is the description">
         <link rel="stylesheet" href="css/styles.css?v=<?php echo time(); ?>" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <title>Home</title>
     </head>
     <body>
-        <header class="main-header">
-            <nav class="nav main-nav">
-                <ul>
-                    <li><a href="index.php">HOME</a></li>
-                    <li><a href="store">STORE</a></li>
-                    <li><a href="about-us">ABOUT</a></li>
-                </ul>
-            </nav>
-            <h1 class="brand-name brand-name-large">Multiversum</h1>
-            <img src="Images/mvm.png" alt="">
-        </header>
-        <section class="content-section container">
-            <h2 class="section-header">Producten</h2>
-            <div>
-                
-            </div>
-        </section>
-        <footer class="main-footer">
-            <div class="container main-footer-container">
-                <h3 class="brand-name">Multiversum</h3>
-            </div>
-        </footer>
+        
+    <?php
+        include("header.php");
+    ?>
+
+
+        <div>
+        homepage here
+        </div>
+
+
+
+
+    <?php
+        include("footer.php");
+    ?>
+
+
+        
 
 
         <style media="screen">
