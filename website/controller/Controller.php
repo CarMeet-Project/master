@@ -18,14 +18,14 @@ class Controller {
         }
 
         if($action === "welcome") {
-            include "View/welcome.php";
+            include "view/welcome.php";
         } elseif ($action === "info") {
-            include "View/information.php";
+            include "view/information.php";
         } elseif ($action === "contact") {
             $data = $this->model->getPhoneNumber();
-            include "View/contact.php";
+            include "view/contact.php";
         } else {
-            include "View/error.php"; 
+            include "view/error.php"; 
        }
     }
 }

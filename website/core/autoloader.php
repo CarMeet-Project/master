@@ -1,7 +1,8 @@
 <?php
 
 spl_autoload_register(function($class) {
-    $contoller = "Controller/" . $class . ".php";
+    
+    $controller = "Controller/" . $class . ".php";
 
     if(file_exists($controller)) {
         require_once($controller);
@@ -12,6 +13,6 @@ spl_autoload_register(function($class) {
     if(file_exists($model)) {
         require_once($model);
     }
-});
+})
 
 ?>

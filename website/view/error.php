@@ -1,3 +1,3 @@
-<?php include "View/fragment/fragment_header.php"; ?>
+<?php include "view/standard_content/header.php" ; ?>
 Er is een fout opgetreden, kies aub in het menu hieronder<br>
-<?php include "View/fragment/fragment_footer.php"; ?>
+<?php include "view/standard_content/footer.php"; ?>

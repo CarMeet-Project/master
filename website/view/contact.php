@@ -1,3 +1,3 @@
-<?php include "frament_header.php" ; ?>
+<?php include "view/standard_content/header.php" ; ?>
 My phone number is <?php echo $data; ?><br>
-<?php include "fragment_footer.php"; ?>
+<?php include "view/standard_content/footer.php"; ?>

@@ -1,3 +1,3 @@
-<?php include "frament_header.php"; ?>
+<?php include "view/standard_content/header.php" ; ?>
 Here is some information<br>
-<?php include "fragment_footer.php"; ?>
+<?php include "view/standard_content/footer.php"; ?>
