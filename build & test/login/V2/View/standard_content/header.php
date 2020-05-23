@@ -12,6 +12,7 @@
 
 <?php 
 
+session_start();
 require("menu.php");
 
 ?>

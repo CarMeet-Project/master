@@ -19,28 +19,29 @@ class Controller {
     }
 
     switch ($action) {
-      case "welcome":
-        include("View/welcome.php");
-				break;
-				
-      case "info":
-				include("View/information.php");
-				break;
-				
-			case "contact":
-				$data = $this->model->getPhoneNumber();
-				include("View/contact.php");
-				break;
 
-			case "login":
-				$data = $this->model->getPhoneNumber();
-				include("View/login.php");
-				break;
-           
+      case "welcome":
+        require("View/welcome.php");
+			  break;
+      case "info":
+		  	require("View/information.php");
+			  break;
+	    case "contact":
+	    	$data = $this->model->getPhoneNumber();
+	    	require("View/contact.php");
+        break;
+	    case "login":
+	    	require("View/login.php");
+        break;
+      case "logout":
+        require("View/logout.php");
+        break;
       default:
-        include("View/error.php"); 
+        require("View/error.php"); 
         break;
     }
 
   }
 }
+
+?>
