@@ -9,3 +9,9 @@
   	<title>MVC</title>
 </head>
 <body>
+
+<?php 
+
+require("menu.php");
+
+?>
