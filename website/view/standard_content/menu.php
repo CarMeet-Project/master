@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="./View/assets/header.css"/>
 <nav id="global">
     <ul>
         <li><a href="index.php?action=welcome">Welcome</a></li>
