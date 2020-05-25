@@ -1,3 +1,4 @@
+
 .site-footer
 {
     position: absolute;
@@ -95,6 +96,39 @@
     text-align:center
   }
 }
+
+.calendar {
+    max-width: 500px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.calendar caption {
+    margin-bottom: 10px;
+}
+
+.calendar .header {
+    background: #555;
+    color: #fff;
+}
+
+.calendar tr:nth-child(odd) {
+    background: #f0f0f0;
+}
+
+.calendar tr:nth-child(even) {
+    background: #e0e0e0;
+}
+
+.calendar th,
+.calendar td {
+    padding: 15px;
+    border: 1px solid #eee;
+}
+
+
 nav#global{
   width: 93%;
   padding: 20px 20px 20px 25px;
@@ -107,18 +141,18 @@ nav#global{
   text-transform: uppercase;
   border-radius: 0 200px 0 200px;
   }
-  
+
   nav#global ul{
   text-align: center;
   margin: 0 auto;
   position: relative;
   }
-  
+
   nav#global ul li{
   margin: 0 50px 0 0;
   display: inline;
   }
-  
+
   nav#global a{
   text-decoration: none;
   color: white;
