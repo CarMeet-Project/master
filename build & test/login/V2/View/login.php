@@ -1,9 +1,28 @@
-<?php require("View/standard_content/header.php"); ?>
+<?php
 
-<form action="./view/authenticateLogin.php" method="POST">
-    <input type="text" name="username" placeholder="Username" id="username" required>
-    <input type="password" name="password" placeholder="Password" id="password" required>
-    <input type="submit" value="Login">
-</form>
+if((isset($_POST["username"])) && (isset($_POST["password"]))) {
+  if((empty($_POST["username"])) || (empty($_POST["password"]))) {
+    $result = "Vul elk veld in";
+    return $result;
+    header("Location: ../index.php");
+    exit();
+  }
+} else {
+  header("Location: ../index.php");
+  exit();
+}
 
-<?php require("View/standard_content/footer.php"); ?>
+$username = $_POST["username"];
+$password = $_POST["password"];
+
+require("../Controller/Account.php");
+require("../Controller/Controller.php");
+
+$account = new Account();
+$account->username = $username;
+$account->password = $password;
+header("Location: ../index.php");
+
+
+
+?>

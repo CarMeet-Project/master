@@ -4,13 +4,10 @@ class Controller {
   private $model;
 
   public function __construct() {
-    echo "In contructor van de Controller class<br>";
-
 		$this->model = new Model();
   }
 
   public function parser() {
-    echo "In parser van de Controller class<br>";
 
     $action = "welcome";
     
@@ -19,7 +16,6 @@ class Controller {
     }
 
     switch ($action) {
-
       case "welcome":
         require("View/welcome.php");
 			  break;
@@ -30,8 +26,8 @@ class Controller {
 	    	$data = $this->model->getPhoneNumber();
 	    	require("View/contact.php");
         break;
-	    case "login":
-	    	require("View/login.php");
+      case "login":
+	    	require("View/login-form.php");
         break;
       case "logout":
         require("View/logout.php");
@@ -40,7 +36,10 @@ class Controller {
         require("View/error.php"); 
         break;
     }
+  }
 
+  private function getValidate($key, $value) {
+    
   }
 }
 
