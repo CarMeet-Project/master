@@ -19,11 +19,17 @@ class Controller {
 
         if($action === "welcome") {
             include("View/welcome.php");
+            
         } elseif ($action === "info") {
             include("View/information.php");
+
+        } elseif ($action === "about_us") {
+            include("View/about_us.php");
+
         } elseif ($action === "contact") {
             $data = $this->model->getPhoneNumber();
             include("View/contact.php");
+            
         } else {
             include("View/error.php"); 
        }
