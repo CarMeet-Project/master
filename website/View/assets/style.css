@@ -161,3 +161,21 @@ nav#global{
   text-decoration: none;
   color: white;
 }
+
+ .textdiv{
+  margin-top: 1%;
+  background-color: #2980b9;
+  width: 75%;
+  border-radius: 0px 200px 200px 0px;
+  border: black solid 2px;
+ }
+
+ .textdivright{
+  margin-top: 5%;
+  background-color: #2980b9;
+  width: 75%;
+  border-radius: 200px 0px 0px 200px;
+  border: black solid 2px;
+  float: right;
+  text-align:right;
+}
