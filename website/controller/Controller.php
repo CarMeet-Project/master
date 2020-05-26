@@ -59,6 +59,8 @@ class Calendar {
         $this->num_days = cal_days_in_month(CAL_GREGORIAN, $this->month, $this->year);
         $this->date_info = getdate(strtotime('first day of', mktime(0,0,0,$this->month,1,$this->year)));
         $this->day_of_week = $this->date_info['wday'];
+
+
     }
 
     public function show() {
@@ -99,5 +101,7 @@ class Calendar {
         $output .= '</table>';
 
         echo $output;
+
+
     }
 }
