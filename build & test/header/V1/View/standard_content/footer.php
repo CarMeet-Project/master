@@ -25,10 +25,10 @@
       <div class="col-xs-6 col-md-3">
         <h6>Quick Links</h6>
         <ul class="footer-links">
-        <li><a href="index.php?action=welcome">Welcome</a></li>
-        <li><a href="index.php?action=info">Info</a></li>
-        <li><a href="index.php?action=aboutUs">About Us</a></li>
-        <li><a href="index.php?action=contact">Contact</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Agenda</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">About Us </a></li>
         </ul>
       </div>
     </div>
