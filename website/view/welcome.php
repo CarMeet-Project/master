@@ -1,3 +1,7 @@
 <?php include("View/standard_content/header.php"); ?>
-Welcome to my Site<br>
+<div class="container">
+        <div class="main">
+            Welcome to my Site<br>
+        </div>
+</div>
 <?php include("View/standard_content/footer.php"); ?>

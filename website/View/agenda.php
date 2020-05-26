@@ -8,14 +8,16 @@
   // $CalendarMonthFive = new Calendar(9,2020);
  // $CalendarMonthSix = new Calendar(10,2020);
 ?>
-<div class="Calendars">
-<?php
-   $CalendarMonthOne->show();
-  // $CalendarMonthTwo->show();
- //  $CalendarMonthThree->show();
-  // $CalendarMonthFour->show();
-  // $CalendarMonthFive->show();
-  // $CalendarMonthSix->show();
- ?>
- </div>
+<div class="container">
+    <div class="main">
+        <?php
+           $CalendarMonthOne->show();
+          // $CalendarMonthTwo->show();
+         //  $CalendarMonthThree->show();
+          // $CalendarMonthFour->show();
+          // $CalendarMonthFive->show();
+          // $CalendarMonthSix->show();
+         ?>
+    </div>
+</div>
 <?php include("view/standard_content/footer.php"); ?>

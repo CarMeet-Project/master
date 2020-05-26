@@ -31,19 +31,15 @@
         <li><a href="index.php?action=contact">Contact</a></li>
         </ul>
       </div>
-    </div>
-    <hr>
-  </div>
-  <div class="container">
-    <div class="row">
       <div class="col-md-8 col-sm-6 col-xs-12">
-        <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by 
+        <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
      <a href="#">SmoothRoadCode</a>.
         </p>
       </div>
     </div>
+    <hr>
   </div>
 </footer>
-  
+
 </body>
 </html>
