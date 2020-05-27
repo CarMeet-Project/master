@@ -21,6 +21,6 @@ $headers .= "Reply-to: $visitor_email \r\n";
 
 mail($to,$email_subject,$email_body,$headers);
 
-header("Location: email.html");
+header("Location: email.php");
 
 ?>
