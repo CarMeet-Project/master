@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" >
-<<<<<<< HEAD:website/standard_content/footer.php
-=======
 <head>
   <meta charset="UTF-8">
   <title>Footer</title>
@@ -11,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/><link rel="stylesheet" href="../assets/footer.css">
 
 </head>
->>>>>>> parent of 61b791a... small:new/standard_content/footer.php
 <body>
 <!-- Site footer -->
 <footer class="site-footer">
