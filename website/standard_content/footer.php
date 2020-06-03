@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en" >
 <body>
 <!-- Site footer -->
 <footer class="site-footer">
@@ -21,13 +23,13 @@
 
         <!-- if loggedin -->
         <?php if ((isset($_SESSION['loggedin'])) && ($_SESSION["loggedin"] == "TRUE")) { ?>
-          
+
         <li><a href="./index.php?action=logout">Uitloggen</a></li>
 
         <?php } else { ?>
-        
+
         <li><a href="./index.php?action=login">Inloggen</a></li>
-        
+
         <?php } ?>
         </ul>
       </div>
