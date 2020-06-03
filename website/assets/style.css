@@ -1,26 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-html, body {
-    height: 100%;
-}
-
-.bigWelcome {
-    border-style: solid;
-    border-color: red;
-}
-
-.container {
-    min-height: 100%;
-}
-
-.main {
-    overflow: auto;
-    padding-bottom: 100px;
-}
-
 .site-footer
 {
     position: relative;
