@@ -1,8 +1,12 @@
 <?php
 
-require_once("Core/autoloader.php");
+require("./standard_content/header.php");
 
-$controller = new Controller();
-$controller->parser();
+require("./content/pageHandler.php");
+
+require("./standard_content/footer.php");
 
 ?>
+
+
+
