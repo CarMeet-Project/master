@@ -33,8 +33,12 @@ if(($result===FALSE) || ($preparedquery->errno)) {
 
     while($row = $result->fetch_assoc()) { ?>
     <div class="details">
+      <?php if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) { ?>
       <a class="btn btn-outline-warning" href="./index.php?action=update_product&id=<?php echo $row["id"]; ?>">wijzigen</a>
       <a class="btn btn-outline-secondary" href="./index.php?action=read_product">Naar overzicht</a>
+      <?php } else { ?>
+      <a class="btn btn-outline-secondary" href="./index.php?action=shop">Naar overzicht</a>
+      <?php } ?>
       <img class="mx-auto" src="./content/products/uploaded_images/<?php echo $row["image"]?>" height="150px">
       <?php 
       echo "<tr>";

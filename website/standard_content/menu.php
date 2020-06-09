@@ -9,7 +9,7 @@
         <?php if ((isset($_SESSION['loggedin'])) && ($_SESSION["loggedin"] == "TRUE")) { ?>
 
         <li class="dropdown">
-            <a href="./index.php?action=read_product">Shop</a>
+            <a href="./index.php?action=shop">Shop</a>
             <div class="dropdown-content">
                 <a href="./index.php?action=add_product">Add</a>
                 <a href="./index.php?action=read_product">Read</a>

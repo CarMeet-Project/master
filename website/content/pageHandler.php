@@ -1,5 +1,7 @@
 <?php
 
+
+// ALERTS
 if((isset($_GET["al"])) && (!empty($_GET["al"])) && (isset($_GET["id"])) && (!empty($_GET["id"])) && (isset($_GET["suc"])) && (!empty($_GET["suc"]))) {
 
   $alert = $_GET["al"];
@@ -47,7 +49,7 @@ if((isset($_GET["al"])) && (!empty($_GET["al"])) && (isset($_GET["id"])) && (!em
 }
 
 
-
+// PAGES
 
 if(isset($_GET["action"])) {
   $action = $_GET["action"];
@@ -70,6 +72,10 @@ switch($action) {
 
   case "aboutUs":
     require("./content/page/aboutUs.php");
+    break;
+
+  case "shop":
+    require("./content/products/overview.php");
     break;
 
   case "login":
@@ -109,11 +115,11 @@ switch($action) {
     break;
 
   case 'read_details_product':
-    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+    // if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
       require("./content/products/read/details.php");
-    } else {
-      require("./content/page/error.php");
-    }
+    // } else {
+    //   require("./content/page/error.php");
+    // }
     break;
 
   case 'updatelist_product':
