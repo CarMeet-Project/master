@@ -1,14 +1,12 @@
-.site-footer
-{
+.site-footer {
     position: relative;
     height: 30%;
-    clear: both
+    clear: both;
     right: 0;
     bottom: 0;
     left: 0;
     margin-top: 10px;
     padding: 1rem;
-    margin-top: -100px;
     background-color: #4682B4;
     padding:45px 0 20px;
     font-size:15px;
