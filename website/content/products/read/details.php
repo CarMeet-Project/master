@@ -32,7 +32,9 @@ if(($result===FALSE) || ($preparedquery->errno)) {
     echo "<table>";
 
     while($row = $result->fetch_assoc()) { ?>
-      <a class="btn btn-outline-secondary" href="./index.php?action=read_product"><-terug</a><br>
+    <div class="details">
+      <a class="btn btn-outline-warning" href="./index.php?action=update_product&id=<?php echo $row["id"]; ?>">wijzigen</a>
+      <a class="btn btn-outline-secondary" href="./index.php?action=read_product">Naar overzicht</a>
       <img class="mx-auto" src="./content/products/uploaded_images/<?php echo $row["image"]?>" height="150px">
       <?php 
       echo "<tr>";
@@ -53,6 +55,7 @@ if(($result===FALSE) || ($preparedquery->errno)) {
       echo "<tr>";
       echo "<td>" . $row["sku"] . "</td>";
       echo "</tr>";
+      echo "</div>";
     }
     echo "</table>";
   }

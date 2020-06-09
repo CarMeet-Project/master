@@ -85,8 +85,8 @@
       
       while($row = $result->fetch_assoc()) {
         echo "  <tr>";
-        echo "    <td>" . $row["name"] . "</td>";
-        echo "    <td>  <a href=\"./content/products/update/update-form.php?id=" . $row["id"] . "\">" . " " . "<button>wijzigen</button>" . "</a>" . "</td>";
+        echo "    <td>  <a href=\"./index.php?action=read_details_product&id=" . $row["id"] . "\">" . "<button type=\"button\" class=\"btn btn-outline-info\">" . $row["name"] . "</button>" . "</a>" . "</td>";
+        echo "    <td>  <a href=\"./index.php?action=update_product&id=" . $row["id"] . "\">" . " " . "<button type=\"button\" class=\"btn btn-outline-warning\">Wijzigen</button>" . "</a>" . "</td>";
         echo "  </tr>";
       };
       echo "</table>";

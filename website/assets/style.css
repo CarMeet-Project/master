@@ -133,3 +133,8 @@
 .alert {
   margin:              10px;
 }
+
+.details .btn {
+  float: right;
+  margin: 0px 5px 0px 5px;
+}
