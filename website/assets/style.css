@@ -108,7 +108,7 @@
 }
 
 .calendar tr:nth-child(odd) {
-    background:     #f0f0f0;
+    background:      #f0f0f0;
 }
 
 .calendar tr:nth-child(even) {
@@ -140,29 +140,29 @@ nav#global ul {
 }
 
 nav#global ul li {
-  margin:             0px 50px 0px 0px;
-  display:            inline;
+  margin:              0px 50px 0px 0px;
+  display:             inline;
 }
 
 nav#global a {
-  text-decoration:    none;
-  color:            white;
+  text-decoration:     none;
+  color:             white;
 }
 
 .textdiv{
-  margin-top:         1%;
-  background-color: #2980b9;
-  width:              75%;
-  border-radius:      0px 200px 200px 0px;
-  border:           black solid 2px;
+  margin-top:          1%;
+  background-color:  #2980b9;
+  width:               75%;
+  border-radius:       0px 200px 200px 0px;
+  border:            black solid 2px;
 }
 
 .textdivright{
-  margin-top:         5%;
-  background-color: #2980b9;
-  width:              75%;
-  border-radius:      200px 0px 0px 200px;
-  border:           black solid 2px;
-  float:              right;
-  text-align:         right;
+  margin-top:          5%;
+  background-color:  #2980b9;
+  width:               75%;
+  border-radius:       200px 0px 0px 200px;
+  border:            black solid 2px;
+  float:               right;
+  text-align:          right;
 }
