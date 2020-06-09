@@ -1,15 +1,7 @@
-<h1>HOME</h1><br>
-<button><a href="../../../index.php?action=add">Add</a></button>
-<button><a href="../../../index.php?action=read">Read</a></button>
-<button><a href="../../../index.php?action=update">Update</a></button>
-<button><a href="../../../index.php?action=delete">Delete</a></button>
-<button><a href="../../../index.php?action=deleted">Deleted</a></button>
-<hr><br><br><br>
-
 <?php
 
-include("../../../dbase/config.php");
-include("../../../dbase/opendb.php");
+include("./dbase/config.php");
+include("./dbase/opendb.php");
 
 if((isset($_GET["id"])) && (!empty($_GET["id"]))) {
   $id = $_GET["id"];
@@ -40,7 +32,8 @@ if(($result===FALSE) || ($preparedquery->errno)) {
     echo "<table>";
 
     while($row = $result->fetch_assoc()) { ?>
-      <img class="mx-auto" src="../uploaded_images/<?php echo $row["image"]?>" height="150px">
+      <a class="btn btn-outline-secondary" href="./index.php?action=read_product"><-terug</a><br>
+      <img class="mx-auto" src="./content/products/uploaded_images/<?php echo $row["image"]?>" height="150px">
       <?php 
       echo "<tr>";
       echo "<td>" . $row["name"] . "</td>";
@@ -67,6 +60,6 @@ if(($result===FALSE) || ($preparedquery->errno)) {
 
 $preparedquery->close();
 
-include("../../../dbase/closedb.php");
+include("./dbase/closedb.php");
 
 ?>

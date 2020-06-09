@@ -1,5 +1,54 @@
 <?php
 
+if((isset($_GET["al"])) && (!empty($_GET["al"])) && (isset($_GET["id"])) && (!empty($_GET["id"])) && (isset($_GET["suc"])) && (!empty($_GET["suc"]))) {
+
+  $alert = $_GET["al"];
+  $id = $_GET["id"];
+
+  switch ($_GET["suc"]) {
+    case "0":
+      $succesFull = "FALSE";
+      break;
+    
+    case "1":
+      $succesFull = "TRUE";
+      break;
+    
+    default:
+      $alert = "";
+      break;
+  }
+
+  switch ($alert) {
+    case "create":
+      require("./content/alerts/create.php");
+      break;
+    
+    case "update":
+      require("./content/alerts/update.php");
+      break;
+    
+    case "delete":
+      require("./content/alerts/delete.php");
+      break;
+
+    case "deleted":
+      require("./content/alerts/deleted.php");
+      break;
+    
+    case "undo":
+      require("./content/alerts/undo.php");
+      break;
+    
+    default:
+      require("./content/alerts/error.php");
+      break;
+  }
+}
+
+
+
+
 if(isset($_GET["action"])) {
   $action = $_GET["action"];
 } else {
@@ -59,9 +108,25 @@ switch($action) {
     }
     break;
 
-  case 'update_product':
+  case 'read_details_product':
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+      require("./content/products/read/details.php");
+    } else {
+      require("./content/page/error.php");
+    }
+    break;
+
+  case 'updatelist_product':
     if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
       require("./content/products/update/update-list.php");
+    } else {
+      require("./content/page/error.php");
+    }
+    break;
+  
+  case 'update_product':
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+      require("./content/products/update/update-form.php");
     } else {
       require("./content/page/error.php");
     }

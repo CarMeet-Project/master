@@ -1,6 +1,6 @@
 <?php
 // starts new or resume excisting session
-session_start();
+// session_start();
 
 // destroys all variables in session
 session_unset();
