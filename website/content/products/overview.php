@@ -80,7 +80,7 @@ while($row = $result->fetch_assoc()) { ?>
             <div class="card-body">
               <h5 class="card-title"><?php echo $row["name"]; ?></h5>
               <p class="card-text"><?php echo $row["description"]; ?></p>
-              <a href="./index.php?action=read_details_product&id=<?php echo $row["id"]; ?>" class="btn btn-primary">Info</a>
+              <a href="./index.php?action=read_details_product&id=<?php echo $row["id"]; ?>" class="btn btn-primary">Details</a>
             </div>
           </div>
         </div>

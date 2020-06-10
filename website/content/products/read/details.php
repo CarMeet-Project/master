@@ -13,6 +13,7 @@ if((isset($_GET["id"])) && (!empty($_GET["id"]))) {
 $query = "SELECT * FROM ";
 $query .= "shop_products ";
 $query .= "WHERE id = ? ";
+$query .= "LIMIT 1 ";
 
 $preparedquery = $dbaselink->prepare($query);
 $preparedquery->bind_param("i", $id);
@@ -34,7 +35,13 @@ if(($result===FALSE) || ($preparedquery->errno)) {
     while($row = $result->fetch_assoc()) { ?>
     <div class="details">
       <?php if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) { ?>
-      <a class="btn btn-outline-danger" href="./index.php?action=delete_product&id=<?php echo $row["id"]; ?>">Verwijderen</a>
+
+        <?php if($row["active"] === "TRUE") {?>
+          <a class="btn btn-outline-danger" href="./index.php?action=delete_product&id=<?php echo $row["id"]; ?>">Verwijderen</a>
+        <?php } else { ?>
+          <a class="btn btn-outline-success" href="./index.php?action=deleted_product&id=<?php echo $row["id"]; ?>">Undo</a>
+        <?php } ?>
+      
       <a class="btn btn-outline-warning" href="./index.php?action=update_product&id=<?php echo $row["id"]; ?>">Wijzigen</a>
       <a class="btn btn-outline-secondary" href="./index.php?action=read_product">Naar overzicht</a>
       <?php } else { ?>
