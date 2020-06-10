@@ -30,8 +30,8 @@
         </p>
         <div class="col-md-4 col-sm-6 col-xs-12">
             <ul class="social-icons">
-              <li><a class="facebook" href="https://www.facebook.com/hoi.smoothroadcode.1"><i class="fa fa-facebook"></i></a></li>
-              <li><a class="twitter" href="https://twitter.com/road_smooth"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="facebook" href="https://www.facebook.com/hoi.smoothroadcode.1" target="_blank"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="https://twitter.com/road_smooth" target="_blank"><i class="fa fa-twitter"></i></a></li>
             </ul>
       </div>
     </div>
