@@ -1,7 +1,7 @@
 <?php
 
-include("../../../dbase/config.php");
-include("../../../dbase/opendb.php");
+include("./dbase/config.php");
+include("./dbase/opendb.php");
 
 
 if((!isset($_GET["id"])) || (empty($_GET["id"]))) {
@@ -27,9 +27,9 @@ if(($result===false) || ($preparedquery->errno)) {
 $preparedquery->close();
 
 
-include("../../../dbase/closedb.php");
+include("./dbase/closedb.php");
 
-header("Location: ../../../index.php?action=deleted");
+header("Location: ./index.php?action=deletedlist_product");
  
 
 ?>

@@ -95,7 +95,28 @@ while($row = $result->fetch_assoc()) { ?>
 
 
 <?php };
-    echo "</div>";
+    switch ($counter) {
+      case '1':
+        echo "<div class=\"col\">";
+        echo "</div>";
+        echo "<div class=\"col\">";
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+        break;
+
+      case '2':
+        echo "<div class=\"col\">";
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+        break;
+      
+      default:
+        echo "</div>";
+        echo "</div>";
+        break;
+    }
   }
 }
 

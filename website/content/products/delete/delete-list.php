@@ -87,7 +87,7 @@
       while($row = $result->fetch_assoc()) {
         echo "  <tr>";
         echo "    <td>" . $row["name"] . "</td>";
-        echo "    <td>  <a href=\"./content/products/delete/delete-action.php?id=" . $row["id"] . "\">" . " " . "<button>Verwijderen</button>" . "</a>" . "</td>";
+        echo "    <td>  <a href=\"./index.php?action=delete_product&id=" . $row["id"] . "\">" . " " . "<button type=\"button\" class=\"btn btn-outline-danger\">Verwijderen</button>" . "</a>" . "</td>";
         echo "  </tr>";
       };
       echo "</table>";
@@ -97,7 +97,7 @@
   $preparedquery->close();
 
   for ($i=1; $i <= $totalPages; $i++) { 
-    echo "<button><a href=\"./index.php?action=delete&page=" . $i . "&f=" . $maxProductsPerPage . "\">" . $i . "</button>";
+    echo "<button><a href=\"./index.php?action=deletelist_product&page=" . $i . "&f=" . $maxProductsPerPage . "\">" . $i . "</button>";
    }
   
   include("./dbase/closedb.php");

@@ -87,7 +87,7 @@ if(($preparedquery->errno) || ($result===FALSE)) {
       echo "  <tr>";
       echo "    <td>  <a href=\"./index.php?action=read_details_product&id=" . $row["id"] . "\">" . "<button type=\"button\" class=\"btn btn-outline-info\">" . $row["name"] . "</button>" . "</a>" . "</td>";
       echo "    <td>  <a href=\"./index.php?action=update_product&id=" . $row["id"] . "\">" . " " . "<button type=\"button\" class=\"btn btn-outline-warning\">Wijzigen</button>" . "</a>" . "</td>";
-      echo "    <td>  <a href=\"../delete/delete.php?id=" . $row["id"] . "\">" . " " . "<button type=\"button\" class=\"btn btn-outline-danger\">Verwijder</button>" . "</a>" . "<br>" . "</td>";
+      echo "    <td>  <a href=\"./index.php?action=delete_product&id=" . $row["id"] . "\">" . " " . "<button type=\"button\" class=\"btn btn-outline-danger\">Verwijder</button>" . "</a>" . "<br>" . "</td>";
       echo "  </tr>";
     };
     echo "</table>";
@@ -97,7 +97,7 @@ if(($preparedquery->errno) || ($result===FALSE)) {
 $preparedquery->close();
 
 for ($i=1; $i <= $totalPages; $i++) { 
-  echo "<button><a href=\"./index.php?action=read&page=" . $i . "&f=" . $maxProductsPerPage . "\">" . $i . "</button>";
+  echo "<button><a href=\"./index.php?action=read_product&page=" . $i . "&f=" . $maxProductsPerPage . "\">" . $i . "</button>";
  }
 
 include("./dbase/closedb.php");

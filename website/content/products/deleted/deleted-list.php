@@ -88,7 +88,7 @@
       while($row = $result->fetch_assoc()) {
         echo "  <tr>";
         echo "    <td>" . $row["name"] . "</td>";
-        echo "    <td>  <a href=\"./content/products/deleted/deleted-undo.php?id=" . $row["id"] . "\">" . " " . "<button>Undo</button>" . "</a>" . "<br>" . "</td>";
+        echo "    <td>  <a href=\"./index.php?action=deleted_product&id=" . $row["id"] . "\">" . " " . "<button type=\"button\" class=\"btn btn-outline-warning\">Undo</button>" . "</a>" . "<br>" . "</td>";
         echo "  </tr>";
       };
       echo "</table>";

@@ -15,7 +15,7 @@
                 <a href="./index.php?action=read_product">Read</a>
                 <a href="./index.php?action=updatelist_product">Update</a>
                 <a href="./index.php?action=deletelist_product">Delete</a>
-                <a href="./index.php?action=deleted_product">Deleted</a>
+                <a href="./index.php?action=deletedlist_product">Deleted</a>
             </div>
         </li>
         <li><a href="./index.php?action=logout">Uitloggen</a></li>

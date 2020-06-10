@@ -138,7 +138,7 @@ switch($action) {
     }
     break;
 
-  case 'delete_product':
+  case 'deletelist_product':
     if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
       require("./content/products/delete/delete-list.php");
     } else {
@@ -146,13 +146,30 @@ switch($action) {
     }
     break;
 
-  case 'deleted_product':
+  case 'delete_product':
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+      require("./content/products/delete/delete-action.php");
+    } else {
+      require("./content/page/error.php");
+    }
+    break;
+
+  case 'deletedlist_product':
     if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
       require("./content/products/deleted/deleted-list.php");
     } else {
       require("./content/page/error.php");
     }
     break;
+
+  case 'deleted_product':
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+      require("./content/products/deleted/deleted-undo.php");
+    } else {
+      require("./content/page/error.php");
+    }
+    break;
+
 
   default:
     require("./content/page/error.php");
