@@ -100,11 +100,11 @@
 }
 
 .calendar tr:nth-child(odd) {
-    background:      #f0f0f0;
+    background:       #f0f0f0;
 }
 
 .calendar tr:nth-child(even) {
-    background:     #e0e0e0;
+    background:       #e0e0e0;
 }
 
 .calendar th, .calendar td {
@@ -114,10 +114,10 @@
 
 .textdiv{
   margin-top:          1%;
-  background-color:  #2980b9;
+  background-color:    #2980b9;
   width:               75%;
   border-radius:       0px 200px 200px 0px;
-  border:            black solid 2px;
+  border:              black solid 2px;
 }
 
 .textdivright{
@@ -135,6 +135,10 @@
 }
 
 .details .btn {
-  float: right;
-  margin: 0px 5px 0px 5px;
+  float:               right;
+  margin:              0px 5px 0px 5px;
+}
+
+.col {
+  padding:             10px 15px 10px 15px;
 }
