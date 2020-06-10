@@ -39,7 +39,8 @@ if(($result===FALSE) || ($preparedquery->errno)) {
         <?php if($row["active"] === "TRUE") {?>
           <a class="btn btn-outline-danger" href="./index.php?action=delete_product&id=<?php echo $row["id"]; ?>">Verwijderen</a>
         <?php } else { ?>
-          <a class="btn btn-outline-success" href="./index.php?action=deleted_product&id=<?php echo $row["id"]; ?>">Undo</a>
+          <a class="btn btn-outline-danger" href="./index.php?action=archive_deleted_product&id=<?php echo $row["id"]; ?>">Permanent Verwijderen</a>
+          <a class="btn btn-outline-success" href="./index.php?action=deleted_product&id=<?php echo $row["id"]; ?>">Activeren</a>
         <?php } ?>
       
       <a class="btn btn-outline-warning" href="./index.php?action=update_product&id=<?php echo $row["id"]; ?>">Wijzigen</a>

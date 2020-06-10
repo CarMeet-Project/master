@@ -77,7 +77,8 @@
       echo "    <th scope=\"col\">#id</th>";
       echo "    <th scope=\"col\">#name</th>";
       echo "    <th scope=\"col\">Details</th>";
-      echo "    <th scope=\"col\">Terugzetten</th>";
+      echo "    <th scope=\"col\">Activeren</th>";
+      echo "    <th scope=\"col\">Peramnent Verwijderen";
       // echo "    <th scope=\"col\">Aantal producten per pagina: </th>";
       // echo "    <th scope=\"col\">";
       // echo "      <form action="" method=\"POST\">";
@@ -105,7 +106,13 @@
   
       echo "  <td>";
       echo "    <a href=\"./index.php?action=deleted_product&id=" . $row["id"] . ">";
-      echo "      <button type=\"button\" class=\"btn btn-outline-success\">Undo</button>";
+      echo "      <button type=\"button\" class=\"btn btn-outline-success\">Activeren</button>";
+      echo "    </a>";
+      echo "  </td>";
+
+      echo "  <td>";
+      echo "    <a href=\"./index.php?action=archive_deleted_product&id=" . $row["id"] . ">";
+      echo "      <button type=\"button\" class=\"btn btn-outline-danger\">Permanenet Verwijderen</button>";
       echo "    </a>";
       echo "  </td>";
   

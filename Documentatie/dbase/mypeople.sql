@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 08 jun 2020 om 17:41
+-- Gegenereerd op: 10 jun 2020 om 12:48
 -- Serverversie: 10.1.38-MariaDB
 -- PHP-versie: 7.3.3
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mypeople`
+-- Database: `MyPeople`
 --
 
 -- --------------------------------------------------------
@@ -30,17 +30,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `accounts` (
   `id` int(11) NOT NULL,
-  `username` varchar(60) NOT NULL,
-  `password` varchar(60) NOT NULL,
-  `active` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `email` varchar(120) NOT NULL,
+  `username` varchar(80) NOT NULL,
+  `password` varchar(80) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `accounts`
 --
 
-INSERT INTO `accounts` (`id`, `username`, `password`, `active`) VALUES
-(1, 'admin', 'admin', 'TRUE');
+INSERT INTO `accounts` (`id`, `email`, `username`, `password`) VALUES
+(1, 'admin@admin.nl', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -57,18 +57,19 @@ CREATE TABLE `shop_products` (
   `qty` int(11) NOT NULL,
   `size` text NOT NULL,
   `sku` text NOT NULL,
-  `active` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` text NOT NULL,
+  `archived` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `shop_products`
 --
 
-INSERT INTO `shop_products` (`id`, `name`, `price`, `image`, `description`, `qty`, `size`, `sku`, `active`) VALUES
-(2, 'TEST1', '100.1', 'logo.png', 'aa', 1, 'XS', '123-456', 'TRUE'),
-(3, 'TEST2', '10.12', 'logo.png', 'Test2 zal deleted worden', 1, 'XL', 'S12-S14', 'TRUE'),
-(4, 'TEST3', '1145.66', 'qr-code.png', 'TEST123', 1, 'L', '789-LAM', 'TRUE'),
-(5, 'a', 'a', 'HTC Vive Cosmos.jpeg', 'a', 1, 'a', 'a', 'FALSE');
+INSERT INTO `shop_products` (`id`, `name`, `price`, `image`, `description`, `qty`, `size`, `sku`, `active`, `archived`) VALUES
+(2, 'TEST1', '100.1', 'logo.png', 'aa', 1, 'XS', '123-456', 'TRUE', 'FALSE'),
+(3, 'TEST2', '10.12', 'logo.png', 'Test2 zal deleted worden', 1, 'XL', 'S12-S14', 'TRUE', 'FALSE'),
+(4, 'TEST3', '1145.66', 'qr-code.png', 'TEST123', 1, 'L', '789-LAM', 'TRUE', 'FALSE'),
+(5, 'a', 'a', 'HTC Vive Cosmos.jpeg', 'a', 1, 'a', 'a', 'TRUE', 'FALSE');
 
 -- --------------------------------------------------------
 
@@ -81,7 +82,7 @@ CREATE TABLE `users` (
   `username` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `users`

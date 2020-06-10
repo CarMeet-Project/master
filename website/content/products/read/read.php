@@ -109,7 +109,7 @@ if(($preparedquery->errno) || ($result===FALSE)) {
 
           echo "  <td>";
           echo "    <a href=\"./index.php?action=delete_product&id=" . $row["id"] . ">";
-          echo "      <button type=\"button\" class=\"btn btn-outline-danger\">Verwijderen</button>";
+          echo "      <button type=\"button\" class=\"btn btn-outline-danger\">Deactiveren</button>";
           echo "    </a>";
           echo "  </td>";
 

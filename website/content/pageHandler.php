@@ -43,6 +43,10 @@ if((isset($_GET["al"])) && (!empty($_GET["al"])) && (isset($_GET["suc"])) && (!e
     case "undo":
       require("./content/alerts/undo.php");
       break;
+
+    case "archive":
+      require("./content/alerts/archive.php");
+      break;
     
     case "mail":
       require("./content/alerts/mail.php");
@@ -179,6 +183,14 @@ switch($action) {
   case 'deleted_product':
     if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
       require("./content/products/deleted/deleted-undo.php");
+    } else {
+      require("./content/page/error.php");
+    }
+    break;
+
+  case 'archive_deleted_product':
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+      require("./content/products/deleted/archive-deleted.php");
     } else {
       require("./content/page/error.php");
     }

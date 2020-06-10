@@ -76,7 +76,7 @@
       echo "    <th scope=\"col\">#id</th>";
       echo "    <th scope=\"col\">#name</th>";
       echo "    <th scope=\"col\">Details</th>";
-      echo "    <th scope=\"col\">Verwijderen</th>";
+      echo "    <th scope=\"col\">Deactiveren</th>";
       // echo "    <th scope=\"col\">Aantal producten per pagina: </th>";
       // echo "    <th scope=\"col\">";
       // echo "      <form action="" method=\"POST\">";
@@ -104,7 +104,7 @@
   
       echo "  <td>";
       echo "    <a href=\"./index.php?action=delete_product&id=" . $row["id"] . ">";
-      echo "      <button type=\"button\" class=\"btn btn-outline-danger\">Verwijderen</button>";
+      echo "      <button type=\"button\" class=\"btn btn-outline-danger\">Deactiveren</button>";
       echo "    </a>";
       echo "  </td>";
   
