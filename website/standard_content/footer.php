@@ -13,10 +13,15 @@
       <div class="col-xs-6 col-md-3">
         <h6>Quick Links</h6>
         <ul class="footer-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Agenda</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">About Us </a></li>
+          <li><a href="./index.php?action=welcome">Home</a></li>
+          <li><a href="./index.php?action=agenda">Agenda</a></li>
+          <li><a href="./index.php?action=contact">Contact</a></li>
+          <li><a href="./index.php?action=aboutUs">OverOns</a></li>
+          <?php if ((isset($_SESSION['loggedin'])) && ($_SESSION["loggedin"] == "TRUE")) { ?>
+          <li><a href="./index.php?action=logout">Uitloggen</a></li>
+          <?php } else { ?>
+          <li><a href="./index.php?action=login">Inloggen</a></li>
+          <?php } ?>
         </ul>
       </div>
     </div>
