@@ -37,7 +37,7 @@ if(($result===FALSE) || ($preparedquery->errno)) {
       <?php if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) { ?>
 
         <?php if($row["active"] === "TRUE") {?>
-          <a class="btn btn-outline-danger" href="./index.php?action=delete_product&id=<?php echo $row["id"]; ?>">Verwijderen</a>
+          <a class="btn btn-outline-danger" href="./index.php?action=delete_product&id=<?php echo $row["id"]; ?>">Deactiveren</a>
         <?php } else { ?>
           <a class="btn btn-outline-danger" href="./index.php?action=archive_deleted_product&id=<?php echo $row["id"]; ?>">Permanent Verwijderen</a>
           <a class="btn btn-outline-success" href="./index.php?action=deleted_product&id=<?php echo $row["id"]; ?>">Activeren</a>
