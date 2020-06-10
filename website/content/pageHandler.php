@@ -2,13 +2,15 @@
 
 
 // ALERTS
-if((isset($_GET["al"])) && (!empty($_GET["al"])) && (isset($_GET["id"])) && (!empty($_GET["id"])) && (isset($_GET["suc"])) && (!empty($_GET["suc"]))) {
+if((isset($_GET["al"])) && (!empty($_GET["al"])) && (isset($_GET["suc"])) && (!empty($_GET["suc"]))) {
 
   $alert = $_GET["al"];
-  $id = $_GET["id"];
+  if((isset($_GET["id"])) && (!empty($_GET["id"]))) {
+    $id = $_GET["id"];
+  }
 
   switch ($_GET["suc"]) {
-    case "0":
+    case "2":
       $succesFull = "FALSE";
       break;
     
@@ -40,6 +42,18 @@ if((isset($_GET["al"])) && (!empty($_GET["al"])) && (isset($_GET["id"])) && (!em
     
     case "undo":
       require("./content/alerts/undo.php");
+      break;
+    
+    case "mail":
+      require("./content/alerts/mail.php");
+      break;
+
+    case "logout":
+      require("./content/alerts/logout.php");
+      break;
+
+    case "login":
+      require("./content/alerts/login.php");
       break;
     
     default:

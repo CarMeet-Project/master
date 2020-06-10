@@ -15,7 +15,7 @@ if($succesFull == "NEE") { ?>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
-  <strong>Succesvol</strong> teruggedraaid
+  <strong>Succesvol</strong> verstuurd
 </div>
 
 <?php } ?>

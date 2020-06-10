@@ -1,12 +1,11 @@
 <?php
-if($succesFull == "NEE") { ?>
+if($succesFull == "FALSE") { ?>
 
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
-  Er is een fout opgetreden 
-  <a href="#" class="alert-link"><strong>Klik hier</strong></a> om opnieuw te proberen.
+  incorrecte gebruikersnaam en/of wachtwoord, probeer het opnieuw.
 </div>
 
 <?php } else { ?>
@@ -15,7 +14,7 @@ if($succesFull == "NEE") { ?>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
-  <strong>Succesvol</strong> teruggedraaid
+  <strong>Succesvol</strong> ingelogd
 </div>
 
 <?php } ?>

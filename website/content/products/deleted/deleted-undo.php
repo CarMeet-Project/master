@@ -29,7 +29,7 @@ $preparedquery->close();
 
 include("./dbase/closedb.php");
 
-header("Location: ./index.php?action=deletedlist_product");
+header("Location: ./index.php?action=deletedlist_product&al=undo&suc=1");
  
 
 ?>

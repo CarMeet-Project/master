@@ -81,7 +81,7 @@ if( in_array($imageFileType,$extensions_arr) ){
 }
 include("../../../dbase/closedb.php");
 
-header("Location: ../../../index.php?action=read");
+header("Location: ../../../index.php?action=read_product&al=create&suc=1");
  
 
 ?>

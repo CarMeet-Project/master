@@ -113,7 +113,7 @@ if((!isset($_POST["image"])) && (!empty($_POST["image"]))) {
 
 include("../../../dbase/closedb.php");
 
-$returnPage = "../../../index.php?action=read_product&id=" . $id . "&al=update&suc=" . ($updateSuccesfull ? "1" : "0");
+$returnPage = "../../../index.php?action=read_product&id=" . $id . "&al=update&suc=" . ($updateSuccesfull ? "1" : "2");
 
 header("Location: " . $returnPage);
 
