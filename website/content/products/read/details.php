@@ -33,7 +33,7 @@ if(($result===FALSE) || ($preparedquery->errno)) {
     echo "<table>";
 
     while($row = $result->fetch_assoc()) { ?>
-    <div class="details">
+    <div class="floatR">
       <?php if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) { ?>
 
         <?php if($row["active"] === "TRUE") {?>

@@ -71,11 +71,12 @@ if(($preparedquery->errno) || ($result===FALSE)) {
     echo "<table class=\"table\">";
     echo "<thead class=\"thead-dark\">";
     echo "  <tr>";
+    echo "    <th scope=\"col\" class=\"checkboxtable\">Selecteer</th>";
     echo "    <th scope=\"col\">#id</th>";
     echo "    <th scope=\"col\">#name</th>";
     echo "    <th scope=\"col\">Details</th>";
     echo "    <th scope=\"col\">Wijzigen</th>";
-    echo "    <th scope=\"col\">Verwijderen</th>";
+    echo "    <th scope=\"col\">Deactiveren</th>";
     // echo "    <th scope=\"col\">Aantal producten per pagina: </th>";
     // echo "    <th scope=\"col\">";
     // echo "      <form action="" method=\"POST\">";
@@ -87,11 +88,20 @@ if(($preparedquery->errno) || ($result===FALSE)) {
     echo "</thead>";
     echo "<tbody>";
 
+    echo "<form action=\"./content/products/delete/delete-action.php\" method=\"POST\">";
+    echo "<input type=\"hidden\" name=\"multiple_delete\" value=\"YES\">";
+    
    while($row = $result->fetch_assoc()) {
 
           echo "<tr>";
 
-          echo "  <th scope=\"row\">#" . $row["id"] . "</th>";
+          echo "  <th scope=\"row\" class=\"checkboxTable\">";
+          echo "    <div class=\"form-check\">";
+          echo "      <input class=\"form-check-input\" type=\"checkbox\" name=\"selected[]\" value=\"" . $row["id"] . "\">";
+          echo "    </div>";
+          echo "  </th>";
+
+          echo "  <td>#" . $row["id"] . "</td>";
 
           echo "  <td>#" . $row["name"] . "</td>";
 
@@ -116,6 +126,28 @@ if(($preparedquery->errno) || ($result===FALSE)) {
           echo "</tr>";
 
       };
+      echo "<tr>";
+      echo "<th scope=\"row\">";
+      echo "</th>";
+
+      echo "<td>"; 
+      echo "</td>";
+
+      echo "<td>"; 
+      echo "</td>";
+
+      echo "<td>"; 
+      echo "</td>";
+
+      echo "<td>"; 
+      echo "</td>";
+
+      echo "<td>"; 
+      echo "<input class=\"btn btn-outline-danger\" type=\"submit\" value=\"Geselecteerde Deactiveren\">";
+      echo "</td>";
+      
+      echo "</tr>";
+      echo "</form>";
     echo "</tbody>";
     echo "</table>";
   }

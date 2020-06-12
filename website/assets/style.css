@@ -134,11 +134,21 @@
   margin:              10px;
 }
 
-.details .btn {
+.floatR .btn {
   float:               right;
   margin:              0px 5px 0px 5px;
 }
 
 .col {
   padding:             10px 15px 10px 15px;
+}
+
+th.checkboxTable {
+  padding-right:      0px!important;
+  margin-right:       0px;
+}
+  
+
+.table td, .table th {
+  padding:            0.75rem 20px 0.75rem 70px;
 }

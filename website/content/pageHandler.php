@@ -39,6 +39,10 @@ if((isset($_GET["al"])) && (!empty($_GET["al"])) && (isset($_GET["suc"])) && (!e
     case "deleted":
       require("./content/alerts/deleted.php");
       break;
+
+    case "multidelete":
+      require("./content/alerts/multiple_delete.php");
+      break;
     
     case "undo":
       require("./content/alerts/undo.php");

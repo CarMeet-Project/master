@@ -15,7 +15,7 @@
                 <a href="./index.php?action=add_product">Toevoegen</a>
                 <a href="./index.php?action=updatelist_product">Wijzigen</a>
                 <a href="./index.php?action=deletelist_product">Deactiveren</a>
-                <a href="./index.php?action=deletedlist_product">Verwijderen</a>
+                <a href="./index.php?action=deletedlist_product">Verwijderde</a>
             </div>
         </li>
         <li><a href="./index.php?action=logout">Uitloggen</a></li>
