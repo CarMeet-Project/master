@@ -18,6 +18,7 @@
                 <a href="./index.php?action=deletedlist_product">Verwijderde</a>
             </div>
         </li>
+        <li><a href="./index.php?action=cms">CMS</a></li>
         <li><a href="./index.php?action=logout">Uitloggen</a></li>
 
         <?php } else { ?>

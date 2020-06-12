@@ -200,6 +200,14 @@ switch($action) {
     }
     break;
 
+  case 'cms':
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+      require("./content/cms/index.php");
+    } else {
+      require("./content/page/error.php");
+    }
+    break;
+
 
   default:
     require("./content/page/error.php");
