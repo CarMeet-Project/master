@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 12 jun 2020 om 13:54
+-- Gegenereerd op: 15 jun 2020 om 13:02
 -- Serverversie: 10.1.38-MariaDB
 -- PHP-versie: 7.3.3
 
@@ -50,79 +50,13 @@ INSERT INTO `accounts` (`id`, `email`, `username`, `password`) VALUES
 
 CREATE TABLE `cms` (
   `id` int(11) NOT NULL,
-  `page_id` int(11) NOT NULL,
-  `content_category` int(11) NOT NULL
+  `name` text NOT NULL,
+  `page_title` text NOT NULL,
+  `header_title` text NOT NULL,
+  `header_content` text NOT NULL,
+  `midpage_content` text NOT NULL,
+  `footer_content` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Gegevens worden geëxporteerd voor tabel `cms`
---
-
-INSERT INTO `cms` (`id`, `page_id`, `content_category`) VALUES
-(1, 1, 1);
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `content`
---
-
-CREATE TABLE `content` (
-  `page_id` int(11) NOT NULL,
-  `content_id` int(11) NOT NULL,
-  `content` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `content_category`
---
-
-CREATE TABLE `content_category` (
-  `id` int(11) NOT NULL,
-  `category` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Gegevens worden geëxporteerd voor tabel `content_category`
---
-
-INSERT INTO `content_category` (`id`, `category`) VALUES
-(1, 'Pagetitle'),
-(2, 'Headertitle'),
-(3, 'Header content'),
-(4, 'Midpage content'),
-(5, 'Footer content');
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `page`
---
-
-CREATE TABLE `page` (
-  `id` int(11) NOT NULL,
-  `name` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Gegevens worden geëxporteerd voor tabel `page`
---
-
-INSERT INTO `page` (`id`, `name`) VALUES
-(1, 'Home'),
-(2, 'Agenda'),
-(3, 'About Us'),
-(4, 'Contact'),
-(5, 'Shop'),
-(6, 'Login'),
-(7, 'Logout'),
-(8, 'Add product'),
-(9, 'Delete product'),
-(10, 'Deleted products'),
-(11, 'Update products'),
-(12, 'Shop');
 
 -- --------------------------------------------------------
 
@@ -190,18 +124,6 @@ ALTER TABLE `cms`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexen voor tabel `content_category`
---
-ALTER TABLE `content_category`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexen voor tabel `page`
---
-ALTER TABLE `page`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexen voor tabel `shop_products`
 --
 ALTER TABLE `shop_products`
@@ -227,19 +149,7 @@ ALTER TABLE `accounts`
 -- AUTO_INCREMENT voor een tabel `cms`
 --
 ALTER TABLE `cms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT voor een tabel `content_category`
---
-ALTER TABLE `content_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT voor een tabel `page`
---
-ALTER TABLE `page`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT voor een tabel `shop_products`
