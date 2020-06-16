@@ -22,5 +22,11 @@
 session_start();
 require("menu.php");
 
-
+if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+  if((isset($_GET["cms"])) && (!empty($_GET["cms"])) && ($_GET["cms"] == "1")) {
+    echo "<div class=\"floatR\"><a href=\"./index.php?action=cms\">";
+    echo "  <button type=\"button\" class=\"btn btn-outline-secondary\">Naar overzicht</button>";
+    echo "</a></div>";
+  }
+}
 ?>

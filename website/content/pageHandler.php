@@ -208,6 +208,22 @@ switch($action) {
     }
     break;
 
+  case 'page_cms':
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+      require("./content/cms/page.php");
+    } else {
+      require("./content/page/error.php");
+    }
+    break;
+
+  case 'details_cms':
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+      require("./content/cms/details.php");
+    } else {
+      require("./content/page/error.php");
+    }
+    break;
+
 
   default:
     require("./content/page/error.php");

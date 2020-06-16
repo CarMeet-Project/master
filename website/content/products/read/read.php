@@ -106,19 +106,19 @@ if(($preparedquery->errno) || ($result===FALSE)) {
           echo "  <td>#" . $row["name"] . "</td>";
 
           echo "  <td>";
-          echo "    <a href=\"./index.php?action=read_details_product&id=" . $row["id"] . ">";
+          echo "    <a href=\"./index.php?action=read_details_product&id=" . $row["id"] . "\">";
           echo "      <button type=\"button\" class=\"btn btn-outline-primary\">Details</button>";
           echo "    </a>";
           echo "  </td>";
 
           echo "  <td>";
-          echo "    <a href=\"./index.php?action=update_product&id=" . $row["id"] . ">";
+          echo "    <a href=\"./index.php?action=update_product&id=" . $row["id"] . "\">";
           echo "      <button type=\"button\" class=\"btn btn-outline-Warning\">Wijzigen</button>";
           echo "    </a>";
           echo "  </td>";
 
           echo "  <td>";
-          echo "    <a href=\"./index.php?action=delete_product&id=" . $row["id"] . ">";
+          echo "    <a href=\"./index.php?action=delete_product&id=" . $row["id"] . "\">";
           echo "      <button type=\"button\" class=\"btn btn-outline-danger\">Deactiveren</button>";
           echo "    </a>";
           echo "  </td>";
