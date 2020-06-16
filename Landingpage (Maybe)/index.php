@@ -38,3 +38,6 @@ require("header.php");
         <div class="box3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius similique magnam rerum eum nisi quo numquam voluptatem, soluta maxime qui!
         </div>
+
+</body>
+</html>
