@@ -3,14 +3,11 @@
 include("./dbase/config.php");
 include("./dbase/opendb.php");
 
-$active = "TRUE";
 
 // count rows
-$query = "SELECT * FROM shop_products ";
-$query .= "WHERE active=? ";
+$query = "SELECT * FROM cms ";
 
 $preparedquery = $dbaselink->prepare($query);
-$preparedquery->bind_param("s", $active);
 $preparedquery->execute();
 
 if($preparedquery->errno) {
@@ -50,13 +47,11 @@ if(!isset($_GET["page"])) {
 $currentPageContent = ($currentPage-1)*$maxProductsPerPage;
 
 $query = "SELECT * ";
-$query .= "FROM shop_products ";
-$query .= "WHERE active=? ";
+$query .= "FROM cms ";
 // $query .= "LIMIT ?, ? ";
 
 $preparedquery = $dbaselink->prepare($query);
-// $preparedquery->bind_param("sii", $active, $currentPageContent, $maxProductsPerPage);
-$preparedquery->bind_param("s", $active);
+// $preparedquery->bind_param("ii", $currentPageContent, $maxProductsPerPage);
 $result = $preparedquery->execute();
 
 if(($preparedquery->errno) || ($result===FALSE)) {
@@ -71,12 +66,13 @@ if(($preparedquery->errno) || ($result===FALSE)) {
     echo "<table class=\"table\">";
     echo "<thead class=\"thead-dark\">";
     echo "  <tr>";
-    echo "    <th scope=\"col\" class=\"checkboxtable\">Selecteer</th>";
     echo "    <th scope=\"col\">#id</th>";
     echo "    <th scope=\"col\">#name</th>";
+    echo "    <th scope=\"col\">page title</th>";
+    echo "    <th scope=\"col\">header title</th>";
+    echo "    <th scope=\"col\">Pagina</th>";
     echo "    <th scope=\"col\">Details</th>";
     echo "    <th scope=\"col\">Wijzigen</th>";
-    echo "    <th scope=\"col\">Deactiveren</th>";
     // echo "    <th scope=\"col\">Aantal producten per pagina: </th>";
     // echo "    <th scope=\"col\">";
     // echo "      <form action="" method=\"POST\">";
@@ -88,66 +84,40 @@ if(($preparedquery->errno) || ($result===FALSE)) {
     echo "</thead>";
     echo "<tbody>";
 
-    echo "<form action=\"./content/products/delete/delete-action.php\" method=\"POST\">";
-    echo "<input type=\"hidden\" name=\"multiple_delete\" value=\"YES\">";
+
     
    while($row = $result->fetch_assoc()) {
 
-          echo "<tr>";
+  	  echo "<tr>";
 
-          echo "  <th scope=\"row\" class=\"checkboxTable\">";
-          echo "    <div class=\"form-check\">";
-          echo "      <input class=\"form-check-input\" type=\"checkbox\" name=\"selected[]\" value=\"" . $row["id"] . "\">";
-          echo "    </div>";
-          echo "  </th>";
-
-          echo "  <td>#" . $row["id"] . "</td>";
-
-          echo "  <td>#" . $row["name"] . "</td>";
-
-          echo "  <td>";
-          echo "    <a href=\"./index.php?action=read_details_product&id=" . $row["id"] . "\">";
-          echo "      <button type=\"button\" class=\"btn btn-outline-primary\">Details</button>";
-          echo "    </a>";
-          echo "  </td>";
-
-          echo "  <td>";
-          echo "    <a href=\"./index.php?action=update_product&id=" . $row["id"] . "\">";
-          echo "      <button type=\"button\" class=\"btn btn-outline-Warning\">Wijzigen</button>";
-          echo "    </a>";
-          echo "  </td>";
-
-          echo "  <td>";
-          echo "    <a href=\"./index.php?action=delete_product&id=" . $row["id"] . "\">";
-          echo "      <button type=\"button\" class=\"btn btn-outline-danger\">Deactiveren</button>";
-          echo "    </a>";
-          echo "  </td>";
-
-          echo "</tr>";
-
-      };
-      echo "<tr>";
-      echo "<th scope=\"row\">";
-      echo "</th>";
-
-      echo "<td>"; 
-      echo "</td>";
-
-      echo "<td>"; 
-      echo "</td>";
-
-      echo "<td>"; 
-      echo "</td>";
-
-      echo "<td>"; 
-      echo "</td>";
-
-      echo "<td>"; 
-      echo "<input class=\"btn btn-outline-danger\" type=\"submit\" value=\"Geselecteerde Deactiveren\">";
-      echo "</td>";
+      echo "  <th scope=\"row\">" . $row["id"] . "</th>";
       
+      echo "  <td>#" . $row["name"] . "</td>";
+      echo "  <td>" . $row["page_title"] . "</td>";
+      echo "  <td>" . $row["header_title"] . "</td>";
+
+
+      echo "  <td>";
+      echo "    <a href=\"./index.php?action=page_cms&id=" . $row["id"] . "\">";
+      echo "      <button type=\"button\" class=\"btn btn-outline-success\">Zie Pagina</button>";
+      echo "    </a>";
+      echo "  </td>";
+
+      echo "  <td>";
+      echo "    <a href=\"./index.php?action=details_cms&id=" . $row["id"] . "\">";
+      echo "      <button type=\"button\" class=\"btn btn-outline-primary\">Details</button>";
+      echo "    </a>";
+      echo "  </td>";
+
+      echo "  <td>";
+      echo "    <a href=\"./index.php?action=update_cms&id=" . $row["id"] . "\">";
+      echo "      <button type=\"button\" class=\"btn btn-outline-warning\">Wijzigen</button>";
+      echo "    </a>";
+      echo "  </td>";
+
       echo "</tr>";
-      echo "</form>";
+      
+    };
     echo "</tbody>";
     echo "</table>";
   }
@@ -158,6 +128,7 @@ $preparedquery->close();
 // for ($i=1; $i <= $totalPages; $i++) { 
 //   echo "<button><a href=\"./index.php?action=read_product&page=" . $i . "&f=" . $maxProductsPerPage . "\">" . $i . "</button>";
 //  }
+
 
 include("./dbase/closedb.php");
 

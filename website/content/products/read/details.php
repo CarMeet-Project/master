@@ -1,15 +1,7 @@
-<h1>HOME</h1><br>
-<button><a href="../../../index.php?action=add">Add</a></button>
-<button><a href="../../../index.php?action=read">Read</a></button>
-<button><a href="../../../index.php?action=update">Update</a></button>
-<button><a href="../../../index.php?action=delete">Delete</a></button>
-<button><a href="../../../index.php?action=deleted">Deleted</a></button>
-<hr><br><br><br>
-
 <?php
 
-include("../../../dbase/config.php");
-include("../../../dbase/opendb.php");
+include("./dbase/config.php");
+include("./dbase/opendb.php");
 
 if((isset($_GET["id"])) && (!empty($_GET["id"]))) {
   $id = $_GET["id"];
@@ -21,6 +13,7 @@ if((isset($_GET["id"])) && (!empty($_GET["id"]))) {
 $query = "SELECT * FROM ";
 $query .= "shop_products ";
 $query .= "WHERE id = ? ";
+$query .= "LIMIT 1 ";
 
 $preparedquery = $dbaselink->prepare($query);
 $preparedquery->bind_param("i", $id);
@@ -40,7 +33,22 @@ if(($result===FALSE) || ($preparedquery->errno)) {
     echo "<table>";
 
     while($row = $result->fetch_assoc()) { ?>
-      <img class="mx-auto" src="../uploaded_images/<?php echo $row["image"]?>" height="150px">
+    <div class="floatR">
+      <?php if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) { ?>
+
+        <?php if($row["active"] === "TRUE") {?>
+          <a class="btn btn-outline-danger" href="./index.php?action=delete_product&id=<?php echo $row["id"]; ?>">Deactiveren</a>
+        <?php } else { ?>
+          <a class="btn btn-outline-danger" href="./index.php?action=archive_deleted_product&id=<?php echo $row["id"]; ?>">Permanent Verwijderen</a>
+          <a class="btn btn-outline-success" href="./index.php?action=deleted_product&id=<?php echo $row["id"]; ?>">Activeren</a>
+        <?php } ?>
+      
+      <a class="btn btn-outline-warning" href="./index.php?action=update_product&id=<?php echo $row["id"]; ?>">Wijzigen</a>
+      <a class="btn btn-outline-secondary" href="./index.php?action=read_product">Naar overzicht</a>
+      <?php } else { ?>
+      <a class="btn btn-outline-secondary" href="./index.php?action=shop">Naar overzicht</a>
+      <?php } ?>
+      <img class="mx-auto" src="./content/products/uploaded_images/<?php echo $row["image"]?>" height="150px">
       <?php 
       echo "<tr>";
       echo "<td>" . $row["name"] . "</td>";
@@ -60,6 +68,7 @@ if(($result===FALSE) || ($preparedquery->errno)) {
       echo "<tr>";
       echo "<td>" . $row["sku"] . "</td>";
       echo "</tr>";
+      echo "</div>";
     }
     echo "</table>";
   }
@@ -67,6 +76,6 @@ if(($result===FALSE) || ($preparedquery->errno)) {
 
 $preparedquery->close();
 
-include("../../../dbase/closedb.php");
+include("./dbase/closedb.php");
 
 ?>

@@ -25,31 +25,31 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `users`
+-- Tabelstructuur voor tabel `accounts`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `accounts` (
   `id` int(11) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL
+  `email` varchar(120) NOT NULL,
+  `username` varchar(80) NOT NULL,
+  `password` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Gegevens worden geëxporteerd voor tabel `users`
+-- Gegevens worden geëxporteerd voor tabel `accounts`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
-(2, 'falco', '525451@edu.rocmn.nl', '81dc9bdb52d04dc20036dbd8313ed055');
+INSERT INTO `accounts` (`id`, `email`, `username`, `password`) VALUES
+(1, 'admin@admin.nl', 'admin', 'admin');
 
 --
 -- Indexen voor geëxporteerde tabellen
 --
 
 --
--- Indexen voor tabel `users`
+-- Indexen voor tabel `accounts`
 --
-ALTER TABLE `users`
+ALTER TABLE `accounts`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -57,10 +57,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT voor een tabel `users`
+-- AUTO_INCREMENT voor een tabel `accounts`
 --
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `accounts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
