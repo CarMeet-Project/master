@@ -224,6 +224,14 @@ switch($action) {
     }
     break;
 
+  case 'update_cms':
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+      require("./content/cms/update/update-form.php");
+    } else {
+      require("./content/page/error.php");
+    }
+    break;
+
 
   default:
     require("./content/page/error.php");
