@@ -53,12 +53,11 @@
   $query = "SELECT * ";
   $query .= "FROM shop_products ";
   $query .= "WHERE active=? ";
-  // $query .= "LIMIT ?, ? ";
+  $query .= "LIMIT ?, ? ";
 
 
   $preparedquery = $dbaselink->prepare($query);
-  $preparedquery->bind_param("s", $active);
-  // $preparedquery->bind_param("sii", $active, $currentPageContent, $maxProductsPerPage);
+  $preparedquery->bind_param("sii", $active, $currentPageContent, $maxProductsPerPage);
   $result = $preparedquery->execute();
 
   if(($preparedquery->errno) || ($result===FALSE)) {
@@ -71,64 +70,36 @@
       exit();
     } else {
       
-      echo "<table class=\"table\">";
-      echo "<thead class=\"thead-dark\">";
+      echo "<table>";
       echo "  <tr>";
-      echo "    <th scope=\"col\">#id</th>";
-      echo "    <th scope=\"col\">#name</th>";
-      echo "    <th scope=\"col\">Details</th>";
-      echo "    <th scope=\"col\">Activeren</th>";
-      echo "    <th scope=\"col\">Peramnent Verwijderen";
-      // echo "    <th scope=\"col\">Aantal producten per pagina: </th>";
-      // echo "    <th scope=\"col\">";
-      // echo "      <form action="" method=\"POST\">";
-      // echo "        <input type=\"number\" name=\"productsPerPage\" value=\"" . $maxProductsPerPage . "\" step=\"5\" min=\"5\" required>";
-      // echo "        <input type=\"submit\" value=\"filter\">";
-      // echo "      </form>";
-      // echo "    </th>";
+      echo "    <th>Naam</th>";
+      echo "    <th>Undo</th>";
+      echo "    <th>Aantal Per Pagina:</th>";
+      echo "    <th>";
+                ?>
+                <form action="" method="POST">
+                  <input type="number" name="productsPerPage" value="<?php echo $maxProductsPerPage; ?>" step="5" min="5">
+                  <input type="submit" value="filter">
+                </form>
+                <?php
+      echo "    </th>";
       echo "  </tr>";
-      echo "</thead>";
-      echo "<tbody>";
-  
-     while($row = $result->fetch_assoc()) {
-  
-      echo "<tr>";
-  
-      echo "  <th scope=\"row\">#" . $row["id"] . "</th>";
-  
-      echo "  <td>#" . $row["name"] . "</td>";
-  
-      echo "  <td>";
-      echo "    <a href=\"./index.php?action=read_details_product&id=" . $row["id"] . ">";
-      echo "      <button type=\"button\" class=\"btn btn-outline-primary\">Details</button>";
-      echo "    </a>";
-      echo "  </td>";
-  
-      echo "  <td>";
-      echo "    <a href=\"./index.php?action=deleted_product&id=" . $row["id"] . ">";
-      echo "      <button type=\"button\" class=\"btn btn-outline-success\">Activeren</button>";
-      echo "    </a>";
-      echo "  </td>";
-
-      echo "  <td>";
-      echo "    <a href=\"./index.php?action=archive_deleted_product&id=" . $row["id"] . ">";
-      echo "      <button type=\"button\" class=\"btn btn-outline-danger\">Permanenet Verwijderen</button>";
-      echo "    </a>";
-      echo "  </td>";
-  
-      echo "</tr>";
-  
+      
+      while($row = $result->fetch_assoc()) {
+        echo "  <tr>";
+        echo "    <td>" . $row["name"] . "</td>";
+        echo "    <td>  <a href=\"./content/products/deleted/deleted-undo.php?id=" . $row["id"] . "\">" . " " . "<button>Undo</button>" . "</a>" . "<br>" . "</td>";
+        echo "  </tr>";
       };
-      echo "</tbody>";
       echo "</table>";
     }
   }
 
   $preparedquery->close();
 
-  // for ($i=1; $i <= $totalPages; $i++) {
-  //   echo "<button><a href=\"./index.php?action=deleted&page=" . $i . "&f=" . $maxProductsPerPage . "\">" . $i . "</button>";
-  //  }
+  for ($i=1; $i <= $totalPages; $i++) {
+    echo "<button><a href=\"./index.php?action=deleted&page=" . $i . "&f=" . $maxProductsPerPage . "\">" . $i . "</button>";
+   }
   
   include("./dbase/closedb.php");
 

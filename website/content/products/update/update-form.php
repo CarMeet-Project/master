@@ -1,7 +1,7 @@
 <?php
 
-include("./dbase/config.php");
-include("./dbase/opendb.php");
+include("../../../dbase/config.php");
+include("../../../dbase/opendb.php");
 
 if((isset($_GET["id"])) && (!empty($_GET["id"]))) {
   $id = $_GET["id"];
@@ -30,7 +30,7 @@ if(($result===FALSE) || ($preparedquery->errno)) {
   } else {
 
     while($row = $result->fetch_assoc()) { ?>
-      <form action="./content/products/update/update-action.php" method="POST" autocomplete="off" enctype="multipart/form-data">
+      <form action="./update-action.php" method="POST" autocomplete="off" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?php echo $id; ?>">
 
         <label id="name">Naam:</label><br>
@@ -39,7 +39,7 @@ if(($result===FALSE) || ($preparedquery->errno)) {
         <label id="price">Prijs:</label><br>
         <input type="text" id="price" name="price" value="<?php echo $row['price'] ?>" placeholder="Prijs" required><br>
 
-        <img class="mx-auto" src="./content/products/uploaded_images/<?php echo $row["image"]?>" height="50px"><br>
+        <img class="mx-auto" src="../uploaded_images/<?php echo $row["image"]?>" height="50px"><br>
 
         <label id="file">Afbeelding:</label><br>
         <input type="file" id="file" name="file" placeholder="Afbeelding"><br>
@@ -82,6 +82,6 @@ if(($result===FALSE) || ($preparedquery->errno)) {
 
 $preparedquery->close();
 
-include("./dbase/closedb.php");
+include("../../../dbase/closedb.php");
 
 ?>

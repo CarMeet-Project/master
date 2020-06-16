@@ -38,7 +38,7 @@ $size = $_POST["size"];
 $sku = $_POST["sku"];
 $active = $_POST["active"];
 
-if((!isset($_POST["image"])) && (!empty($_POST["image"]))) {
+if(!isset($_POST["image"])) {
   $image_name = $_FILES['file']['name'];
   $upload_file_to = "../uploaded_images/";
   $target_file = $upload_file_to . basename($_FILES["file"]["name"]);
@@ -78,8 +78,9 @@ if((!isset($_POST["image"])) && (!empty($_POST["image"]))) {
        echo "Er is een fout opgetreden";
      } else {
 
-      // Upload file
-      move_uploaded_file($_FILES['file']['tmp_name'], $upload_file_to . $image_name);
+     // Upload file
+     move_uploaded_file($_FILES['file']['tmp_name'], $upload_file_to . $image_name);
+    
      }
 
      $preparedquery->close();
@@ -98,14 +99,11 @@ if((!isset($_POST["image"])) && (!empty($_POST["image"]))) {
      $query .= "WHERE id=? ";
 
      $preparedquery = $dbaselink->prepare($query);
-     $preparedquery->bind_param("sssisssi", $name, $price, $description, $qty, $size, $sku, $active, $id);
+     $preparedquery->bind_param("ssssisssi", $name, $price, $description, $qty, $size, $sku, $active, $id);
      $result = $preparedquery->execute();
 
-     if(($result === false) || ($preparedquery->errno)) {
-      echo "Er is een fout opgetreden";
-      $updateSuccesfull = FALSE;
-     } else {
-      $updateSuccesfull = TRUE;
+     if(($result===false) || ($preparedquery->errno)) {
+       echo "Er is een fout opgetreden";
      }
 
      $preparedquery->close();
@@ -113,8 +111,7 @@ if((!isset($_POST["image"])) && (!empty($_POST["image"]))) {
 
 include("../../../dbase/closedb.php");
 
-$returnPage = "../../../index.php?action=read_product&id=" . $id . "&al=update&suc=" . ($updateSuccesfull ? "1" : "2");
-
-header("Location: " . $returnPage);
+header("Location: ../../../index.php?action=read");
+ 
 
 ?>
