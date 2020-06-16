@@ -32,6 +32,7 @@ $qty = $_POST["qty"];
 $size = $_POST["size"];
 $sku = $_POST["sku"];
 $active = "TRUE";
+$archived = "FALSE";
 
  
 $image_name = $_FILES['file']['name'];
@@ -61,11 +62,12 @@ if( in_array($imageFileType,$extensions_arr) ){
    $query .= "qty, ";
    $query .= "size, ";
    $query .= "sku, ";
-   $query .= "active) ";
-   $query .= "values(?, ?, ?, ?, ?, ?, ?, ?) ";
+   $query .= "active, ";
+   $query .= "archived) ";
+   $query .= "values(?, ?, ?, ?, ?, ?, ?, ?, ?) ";
 
    $preparedquery = $dbaselink->prepare($query);
-   $preparedquery->bind_param("ssssisss", $name, $price, $image_name, $description, $qty, $size, $sku, $active);
+   $preparedquery->bind_param("ssssisss", $name, $price, $image_name, $description, $qty, $size, $sku, $active, $archived);
    $result = $preparedquery->execute();
 
    if(($result===false) || ($preparedquery->errno)) {
@@ -81,7 +83,7 @@ if( in_array($imageFileType,$extensions_arr) ){
 }
 include("../../../dbase/closedb.php");
 
-header("Location: ../../../index.php?action=read");
+header("Location: ../../../index.php?action=read_product&al=create&suc=1");
  
 
 ?>
