@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 15 jun 2020 om 13:02
+-- Gegenereerd op: 16 jun 2020 om 22:45
 -- Serverversie: 10.1.38-MariaDB
 -- PHP-versie: 7.3.3
 
@@ -51,12 +51,22 @@ INSERT INTO `accounts` (`id`, `email`, `username`, `password`) VALUES
 CREATE TABLE `cms` (
   `id` int(11) NOT NULL,
   `name` text NOT NULL,
+  `file_name` text NOT NULL,
+  `get_name` text NOT NULL,
+  `get_action_name` text NOT NULL,
   `page_title` text NOT NULL,
   `header_title` text NOT NULL,
   `header_content` text NOT NULL,
   `midpage_content` text NOT NULL,
   `footer_content` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `cms`
+--
+
+INSERT INTO `cms` (`id`, `name`, `file_name`, `get_name`, `get_action_name`, `page_title`, `header_title`, `header_content`, `midpage_content`, `footer_content`) VALUES
+(1, 'Home', 'index.php', 'action', 'welcome', 'Home', 'Home', 'Welkom bij carmeet website', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt ligula ut dui posuere, non iaculis sapien lacinia. Vivamus ligula odio, efficitur non tellus at, efficitur tincidunt ante. Cras sit amet magna quis dui ornare congue. Donec luctus volutpat ligula. Integer ultrices justo et sapien dapibus, sit amet fermentum dui euismod. Nulla facilisi. Sed tincidunt, nisi eget elementum tincidunt, ipsum ante venenatis risus, eu luctus augue risus non dui. Proin tortor mi, posuere ut finibus sagittis, lacinia iaculis nisi. Nunc enim nibh, tincidunt non ornare nec, ornare rutrum purus. Mauris mauris nunc, tempus id blandit tristique, consequat a sapien. Aliquam erat volutpat. Morbi sagittis sit amet ex ut tempus. Nullam vitae lobortis sapien.Etiam tristique ligula eget euismod dapibus. Nam blandit magna in tortor malesuada tristique. Praesent accumsan pretium risus non blandit. Praesent ornare ex a risus interdum varius. Vivamus elementum vulputate tellus eu elementum. Nam porttitor ultrices nisi, et mollis turpis tempus a. Fusce pharetra sem sapien, vel aliquam erat faucibus et.', 'Mede Mogelijk Gemaakt door SmoothRoadCode');
 
 -- --------------------------------------------------------
 
@@ -149,7 +159,7 @@ ALTER TABLE `accounts`
 -- AUTO_INCREMENT voor een tabel `cms`
 --
 ALTER TABLE `cms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT voor een tabel `shop_products`
