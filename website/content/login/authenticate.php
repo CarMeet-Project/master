@@ -34,17 +34,17 @@ if ($preparedquery = $dbaselink->prepare('SELECT id, password FROM accounts WHER
             $_SESSION['loggedin'] = TRUE;
             $_SESSION['name'] = $_POST['username'];
             $_SESSION['id'] = $id;
-            header('Location: ../../index.php?al=login&suc=1');
+            header('Location: ../../index.php');
         } else {
             $preparedquery->close();
             echo 'Verkeerde gebruikersnaam of wachtwoord ingevoerd!<br>';
-            header('Location: ../../index.php?al=login&suc=2');
+            echo "<button><a href=\"../../index.php?action=login\">Probeer opnieuw</a></button>";
             exit();
         }
     } else {
         $preparedquery->close();
         echo 'Verkeerde gebruikersnaam of wachtwoord ingevoerd!<br>';
-        header('Location: ../../index.php?action=login&al=login&suc=2');
+        echo "<button><a href=\"../../index.php?action=login\">Probeer opnieuw</a></button>";
         exit();
     }
 

@@ -1,6 +1,6 @@
 <?php
 // starts new or resume excisting session
-// session_start();
+session_start();
 
 // destroys all variables in session
 session_unset();
@@ -9,7 +9,7 @@ session_unset();
 session_destroy();
 
 // Redirect to the:
-header('Location: ./index.php?al=logout&suc=1');
+header('Location: ./index.php');
 
 
 ?>
