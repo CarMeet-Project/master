@@ -14,7 +14,7 @@ if((!isset($_POST["id"])) ||
    (!isset($_POST["header_content"])) ||
    (!isset($_POST["midpage_content"])) ||
    (!isset($_POST["footer_content"]))) {
-    echo "er is een fout opgetreden";
+    echo "er is een fout opgetredennnn";
     exit();
 } else {
 
@@ -59,7 +59,7 @@ $query .= "footer_content=? ";
 $query .= "WHERE id=? ";
 
 $preparedquery = $dbaselink->prepare($query);
-$preparedquery->bind_param("sssssssssi", $name, $file_name, $get_name, $get_action_name, $page_title, $header_title, $header_content, $midpage_content, $footer_content);
+$preparedquery->bind_param("sssssssssi", $name, $file_name, $get_name, $get_action_name, $page_title, $header_title, $header_content, $midpage_content, $footer_content, $id);
 $result = $preparedquery->execute();
 
 if(($result === false) || ($preparedquery->errno)) {
@@ -73,7 +73,7 @@ $preparedquery->close();
 
 include("../../../dbase/closedb.php");
 
-$returnPage = "../../../index.php?action=read_product&id=" . $id . "&al=update&suc=" . ($updateSuccesfull ? "1" : "2");
+$returnPage = "../../../index.php?action=cms&id=" . $id . "&al=update&suc=" . ($updateSuccesfull ? "1" : "2");
 
 header("Location: " . $returnPage);
 
