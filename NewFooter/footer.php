@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="footer.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-</head>
-
-<body>
     <footer>
         <div class="main-content">
             <div class="left box">
