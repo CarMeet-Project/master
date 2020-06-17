@@ -50,3 +50,11 @@
         Lorem ipsum dolor sit amet.
     </div>
 </div>
+
+<?php
+
+session_start();
+
+$_SESSION["loggedin"];
+
+ ?>

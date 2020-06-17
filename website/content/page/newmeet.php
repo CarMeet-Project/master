@@ -1,3 +1,12 @@
+<?php
+
+if (!$_SESSION["loggedin"]) {
+    echo "U bent nog niet ingelogd. U moet ingelogd zijn om een meet aan te maken.";
+    die;
+}
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>

@@ -112,6 +112,18 @@
     border:           1px solid #eee;
 }
 
+.meetup-add-button {
+    float: right;
+    margin-right: 5%;
+}
+
+.meetup {
+    border: 2px;
+    border-color: #4682b4;
+    width: 20%;
+    margin-left: 20%;
+}
+
 .textdiv{
   margin-top:          1%;
   background-color:    #2980b9;
@@ -147,7 +159,7 @@ th.checkboxTable {
   padding-right:      0px!important;
   margin-right:       0px;
 }
-  
+
 
 .table td, .table th {
   padding:            0.75rem 20px 0.75rem 70px;

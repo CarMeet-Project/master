@@ -2,9 +2,11 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>Meetups</title>
     </head>
     <body>
-        <a href="./index.php?action=new_meet">Meet toevoegen</a>
+        <a class="meetup-add-button" href="./index.php?action=new_meet">Meet toevoegen</a>
+        <?php include("./content/meetup/show-meet.php") ?>
+
     </body>
 </html>
