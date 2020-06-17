@@ -108,11 +108,10 @@ switch($action) {
     }
     break;
 
-
    case "meet_page":
      require("./content/page/meetpage.php");
      break;
-
+     
   case "login":
     if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
       require("./content/logout/logout.php");
