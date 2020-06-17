@@ -1,21 +1,10 @@
-
-<?php
-   $CalendarMonthOne = new Calendar(5,2020);
-   $CalendarMonthTwo = new Calendar(6,2020);
-   $CalendarMonthThree = new Calendar(7,2020);
-   $CalendarMonthFour = new Calendar(8,2020);
-   $CalendarMonthFive = new Calendar(9,2020);
-   $CalendarMonthSix = new Calendar(10,2020);
-?>
-<div class="container">
-    <div class="main">
-        <?php
-           $CalendarMonthOne->show();
-           $CalendarMonthTwo->show();
-           $CalendarMonthThree->show();
-           $CalendarMonthFour->show();
-           $CalendarMonthFive->show();
-           $CalendarMonthSix->show();
-         ?>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <a href="./index.php?action=new_meet">Meet toevoegen</a>
+    </body>
+</html>

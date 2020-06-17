@@ -5,7 +5,7 @@
         <title></title>
     </head>
     <body>
-        <form class="" action="makePost.php" method="post">
+        <form class="" action="./content/meetup/makePost.php" method="post">
             <input type="text" name="header" placeholder="header">
             <input type="text" name="discription" placeholder="discription">
             <input type="date" name="date">

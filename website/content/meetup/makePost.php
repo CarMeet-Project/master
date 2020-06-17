@@ -1,6 +1,7 @@
 <?php
 
-    include 'dbconnect.php';
+
+    include './dbase/opendb.php';
 
     $userId = 1;
     $header = $_POST['header'];
@@ -10,7 +11,7 @@
     $sql = "INSERT INTO meetup (userid, header, description, date)
     VALUES ('$userId', '$header', '$discription', '$date')";
 
-    if ($conn->query($sql) === TRUE) {
+    if ($dbaselink->query($sql) === TRUE) {
       echo "New record created successfully";
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
