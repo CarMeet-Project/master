@@ -5,7 +5,11 @@
         <title>Meetups</title>
     </head>
     <body>
-        <a class="meetup-add-button" href="./index.php?action=new_meet">Meet toevoegen</a>
+    <?php if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) { ?>
+        <div class="floatR">
+        <a class="btn btn-outline-success" href="./index.php?action=new_meet">Meet toevoegen</a>
+    </div>
+    <?php } ?>
         <?php include("./content/meetup/show-meet.php") ?>
 
     </body>
