@@ -15,7 +15,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="./assets/style.css"/>
     <link rel="stylesheet" href="./assets/header.css"/>
-    <link rel="stylesheet" href="./assets/footer.css"/>
+    <!-- <link rel="stylesheet" href="./assets/footer.css"/> -->
     <link rel="stylesheet" href="./assets/grid.css">
   	<title>Car meet</title>
 </head>
