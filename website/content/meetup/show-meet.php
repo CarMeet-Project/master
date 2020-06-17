@@ -8,7 +8,7 @@
 
     if (mysqli_num_rows($result) == 0) {
     echo "No rows found, nothing to print so am exiting";
-    exit;
+    exit();
     }
 
     while ($row = mysqli_fetch_assoc($result)) {

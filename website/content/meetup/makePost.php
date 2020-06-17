@@ -1,7 +1,7 @@
 <?php
 
 
-    include '../../dbase/config.php';
+    include("../../dbase/config.php");
 
     $userId = 1;
     $header = $_POST['header'];
