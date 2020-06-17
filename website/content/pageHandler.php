@@ -101,7 +101,11 @@ switch($action) {
     break;
 
   case "new_meet":
-    require("./content/page/newmeet.php");
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+      require("./content/page/newmeet.php");
+    } else {
+      require("./content/page/error.php");
+    }
     break;
 
   case "login":
