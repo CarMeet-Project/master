@@ -6,7 +6,7 @@
 }
 
 footer{
-    position: initial;
+    position: fixed;
     bottom: 0px;
     width: 100%;
     background: #4682B4;
