@@ -28,11 +28,3 @@
     <p>Lorem ipsum dolor sit amet.</p>
   </div>
 </div>
-
-<?php
-
-session_start();
-
-$_SESSION["loggedin"];
-
- ?>
