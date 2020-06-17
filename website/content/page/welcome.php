@@ -2,7 +2,7 @@
 
   <div>
   <div class="col-12 col-s-12 footer">
-      Lorem ipsum dolor sit amet.
+      <img src="./assets/img/car.jpg" alt="" srcset="">
   </div>
   </div>
 
