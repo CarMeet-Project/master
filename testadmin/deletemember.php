@@ -34,7 +34,7 @@ if($preparedquery->errno) {
 
 $preparedquery->close();
 echo "<br><br>";
-echo "<a href=\"./index.php\"><button>Home</button></a>";
+echo "<a href=\"./admin.php\"><button>Terug</button></a>";
 include("./dbase/closedb.php");
 
 

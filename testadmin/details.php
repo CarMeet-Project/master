@@ -1,4 +1,8 @@
 <?php
+require("header.php");
+?>
+
+<?php
 
   include("./dbase/config.php");
   include("./dbase/opendb.php");
@@ -22,7 +26,10 @@
       echo "Geen rijen gevonden";
     } else {
       while($row = $result->fetch_assoc()) {
-        echo "Id = " . $row["id"] . "<br>" . " " . "Voornaam = " . $row["voornaam"] . "<br>" . " " . "Achternaam = " . $row["achternaam"] . "<br>" . " " . "Authorisatie = " . $row["authorisatie"] . " " . "<br>";
+        echo "<td>" . "Id = " . $row["id"] . "<br>"; 
+        echo "<td>" . "Voornaam = " . $row["voornaam"] . "<br>";
+        echo "<td>" . "Achternaam = " . $row["achternaam"] . "<br>";
+        echo "<td>" . "Authorisatie = " . $row["authorisatie"] . "<br>";
       }
     }
   }

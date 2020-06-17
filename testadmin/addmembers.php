@@ -6,7 +6,8 @@
   </head>
 
   <body>
-
+  <a href="./admin.php"><button>Terug</button></a>
+  <br></br>
   <form action="./memberresult.php" method="POST">
       <div class="form">
       <input type="text" placeholder="voornaam" name="voornaam" required />
@@ -23,7 +24,6 @@
     </form>
     </div>
     <br><br>
-    <a href="./index.php"><button>Terug</button></a>
   </body>
 
 </html>

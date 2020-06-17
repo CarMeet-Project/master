@@ -1,4 +1,13 @@
 <?php
+require("./header.php")
+?>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./assets/option.css"/>
+</head>
+
+<?php
 
   include("./dbase/config.php");
   include("./dbase/opendb.php");
@@ -28,7 +37,7 @@
       while($row = $result->fetch_assoc()) {
         echo "  <tr>";
         echo "    <td>  <a href=\"./details.php?id=" . $row["id"] . "\">" . $row["voornaam"] . "</a>" . "</td>";
-        echo "    <td>  <a href=\"./deletemember.php?id=" . $row["id"] . "\">" . " " . "<button>verwijder</button>" . "</a>" . "<br>" . "</td>";
+        echo "    <td>  <a href=\"./deletemember.php?id=" . $row["id"] . "\">" . " " . "Verwijder" . "</a>" . "<br>" . "</td>";
         echo "  </tr>";
       };
       echo "</table>";
@@ -38,7 +47,8 @@
   $preparedquery->close();
 
   echo "<br><br>";
-  echo "<a href=\"./memberview.php\"><button>Overzicht Members</button></a>";
   include("./dbase/closedb.php");
+
+  require("./footer.php");
 
 ?>

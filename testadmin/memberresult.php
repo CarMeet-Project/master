@@ -40,7 +40,7 @@ if (($result===false) || ($preparedquery->errno)) {
   echo "Er is een fout opgetreden, Probeer opnieuw uw lid toe te voegen! ";
 } else {
   echo "Member succesvol toegevoegd!<br>";
-  echo "<a href=\"./index.php\"><button>Home</button></a>";
+  echo "<a href=\"./admin.php\"><button>Terug</button></a>";
 }
 
 $preparedquery->close();

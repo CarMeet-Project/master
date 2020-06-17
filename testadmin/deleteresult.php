@@ -16,7 +16,7 @@ $result = $preparedquery->execute();
 
 echo "deze persoon is verwijderd";
 echo "<br>";
-echo "<a href=\"./index.php\"><button>Home</button></a>";
+echo "<a href=\"./admin.php\"><button>Terug</button></a>";
 
 
 $preparedquery->close();
