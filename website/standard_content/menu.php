@@ -11,7 +11,7 @@
         <li class="dropdown">
             <a href="./index.php?action=shop">Winkel</a>
             <div class="dropdown-content">
-                <a href="./index.php?action=read_product">Overicht</a>
+                <a href="./index.php?action=read_product">Overzicht</a>
                 <a href="./index.php?action=add_product">Toevoegen</a>
                 <a href="./index.php?action=updatelist_product">Wijzigen</a>
                 <a href="./index.php?action=deletelist_product">Deactiveren</a>

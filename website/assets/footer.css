@@ -13,6 +13,14 @@ footer{
     background: #4682B4;
 }
 
+/* body .container {
+    padding-top: 60px;
+    clear: both;
+    position: relative;
+    height: 200px;
+    margin-top: -200px;
+} */
+
 .main-content{
     display: flex;
 }

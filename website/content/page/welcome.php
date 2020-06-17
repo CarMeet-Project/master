@@ -1,54 +1,32 @@
+<div>
+  <div class="col-12 col-s-12 color">
+    <img class="mainpic"src="./assets/img/carmeetup.jpg" >
+  </div>
+</div>
 
 
-  <div>
-  <div class="col-12 col-s-12 footer">
-      <img src="./assets/img/car.jpg" alt="" srcset="">
+<div class="col-4 col-s-4 color">
+  <div class="aside">
+    <p><img class="imgclass_homegrid" src="./assets/img/car.jpg" ></p>
   </div>
-  </div>
+</div>
 
-  <div>
-    <div class="col-12 col-s-12 footer">
-      banner
-    </div>
+<div class="col-4 col-s-4 color">
+  <div class="aside">
+    <p><img class="imgclass_homegrid" src="./assets/img/carmeet.jpg" ></p>
   </div>
+</div>
 
-  <div class="col-4 col-s-4 footer">
-    <div class="aside">
-        <h2>Lorem</h2>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <h2>Lorem.</h2>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <h2>Lorem.</h2>
-        <p>Lorem ipsum dolor sit amet.</p>
-      </div>
+<div class="col-4 col-s-4 color">
+  <div class="aside">
+    <p><img class="imgclass_homegrid" src="./assets/img/car.jpg" ></p>
   </div>
-
-  <div class="col-4 col-s-4 footer">
-    <div class="aside">
-        <h2>Lorem</h2>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <h2>Lorem.</h2>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <h2>Lorem.</h2>
-        <p>Lorem ipsum dolor sit amet.</p>
-      </div>
-  </div>
-
-  <div class="col-4 col-s-4 footer">
-    <div class="aside">
-        <h2>Lorem</h2>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <h2>Lorem.</h2>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <h2>Lorem.</h2>
-        <p>Lorem ipsum dolor sit amet.</p>
-      </div>
-  </div>
+</div>
 
 <div>
-    <div class="col-12 col-s-12 footer">
-        Lorem ipsum dolor sit amet.
-    </div>
+  <div class="col-12 col-s-12 color">
+    <p>Lorem ipsum dolor sit amet.</p>
+  </div>
 </div>
 
 <?php
