@@ -5,4 +5,6 @@
   $dbpass = "";
   $dbname = "mypeople";
 
+  $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+
 ?>

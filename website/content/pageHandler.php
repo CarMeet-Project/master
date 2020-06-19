@@ -13,11 +13,11 @@ if((isset($_GET["al"])) && (!empty($_GET["al"])) && (isset($_GET["suc"])) && (!e
     case "2":
       $succesFull = "FALSE";
       break;
-    
+
     case "1":
       $succesFull = "TRUE";
       break;
-    
+
     default:
       $alert = "";
       break;
@@ -27,11 +27,11 @@ if((isset($_GET["al"])) && (!empty($_GET["al"])) && (isset($_GET["suc"])) && (!e
     case "create":
       require("./content/alerts/create.php");
       break;
-    
+
     case "update":
       require("./content/alerts/update.php");
       break;
-    
+
     case "delete":
       require("./content/alerts/delete.php");
       break;
@@ -43,7 +43,7 @@ if((isset($_GET["al"])) && (!empty($_GET["al"])) && (isset($_GET["suc"])) && (!e
     case "multidelete":
       require("./content/alerts/multiple_delete.php");
       break;
-    
+
     case "undo":
       require("./content/alerts/undo.php");
       break;
@@ -51,7 +51,7 @@ if((isset($_GET["al"])) && (!empty($_GET["al"])) && (isset($_GET["suc"])) && (!e
     case "archive":
       require("./content/alerts/archive.php");
       break;
-    
+
     case "mail":
       require("./content/alerts/mail.php");
       break;
@@ -63,7 +63,7 @@ if((isset($_GET["al"])) && (!empty($_GET["al"])) && (isset($_GET["suc"])) && (!e
     case "login":
       require("./content/alerts/login.php");
       break;
-    
+
     default:
       require("./content/alerts/error.php");
       break;
@@ -100,6 +100,18 @@ switch($action) {
     require("./content/products/overview.php");
     break;
 
+  case "new_meet":
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+      require("./content/page/newmeet.php");
+    } else {
+      require("./content/page/error.php");
+    }
+    break;
+
+   case "meet_page":
+     require("./content/page/meetpage.php");
+     break;
+     
   case "login":
     if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
       require("./content/logout/logout.php");
@@ -151,7 +163,7 @@ switch($action) {
       require("./content/page/error.php");
     }
     break;
-  
+
   case 'update_product':
     if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
       require("./content/products/update/update-form.php");
