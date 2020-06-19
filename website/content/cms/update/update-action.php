@@ -4,25 +4,23 @@ include("../../../dbase/config.php");
 include("../../../dbase/opendb.php");
 
 
-if((!isset($_POST["id"])) ||
-   (!isset($_POST["name"])) ||
-   (!isset($_POST["file_name"])) ||
-   (!isset($_POST["get_name"])) ||
-   (!isset($_POST["get_action_name"])) ||
+if((!isset($_POST["page_id"])) ||
+   (!isset($_POST["page_name"])) ||
+   (!isset($_POST["action_name"])) ||
+   (!isset($_POST["customer_page"])) ||
    (!isset($_POST["page_title"])) ||
    (!isset($_POST["header_title"])) ||
    (!isset($_POST["header_content"])) ||
    (!isset($_POST["midpage_content"])) ||
    (!isset($_POST["footer_content"]))) {
-    echo "er is een fout opgetredennnn";
+    echo "er is een fout opgetreden";
     exit();
 } else {
 
-  if((empty($_POST["id"])) ||
-    (empty($_POST["name"])) ||
-    (empty($_POST["file_name"])) ||
-    (empty($_POST["get_name"])) ||
-    (empty($_POST["get_action_name"])) ||
+  if((empty($_POST["page_id"])) ||
+    (empty($_POST["page_name"])) ||
+    (empty($_POST["action_name"])) ||
+    (empty($_POST["cusstomer_page"])) ||
     (empty($_POST["page_title"])) ||
     (empty($_POST["header_title"])) ||
     (empty($_POST["header_content"])) ||
@@ -33,11 +31,10 @@ if((!isset($_POST["id"])) ||
   }
 }
 
-$id = $_POST["id"];
-$name = $_POST["name"];
-$file_name = $_POST["file_name"];
-$get_name = $_POST["get_name"];
-$get_action_name = $_POST["get_action_name"];
+$page_id = $_POST["page_id"];
+$page_name = $_POST["page_name"];
+$action_name = $_POST["action_name"];
+$customer_page = $_POST["customer_page"];
 $page_title = $_POST["page_title"];
 $header_title = $_POST["header_title"];
 $header_content = $_POST["header_content"];
@@ -45,21 +42,13 @@ $midpage_content = $_POST["midpage_content"];
 $footer_content = $_POST["footer_content"];
 
   
-$query = "UPDATE cms ";
+$query = "UPDATE page ";
 $query .= "SET ";
-$query .= "name=?, ";
-$query .= "file_name=?, ";
-$query .= "get_name=?, ";
-$query .= "get_action_name=?, ";
-$query .= "page_title=?, ";
-$query .= "header_title=?, ";
-$query .= "header_content=?, ";
-$query .= "midpage_content=?, ";
-$query .= "footer_content=? ";
+$query .= "page_name=?, ";
 $query .= "WHERE id=? ";
 
 $preparedquery = $dbaselink->prepare($query);
-$preparedquery->bind_param("sssssssssi", $name, $file_name, $get_name, $get_action_name, $page_title, $header_title, $header_content, $midpage_content, $footer_content, $id);
+$preparedquery->bind_param("si", $page_name, $id);
 $result = $preparedquery->execute();
 
 if(($result === false) || ($preparedquery->errno)) {
@@ -68,7 +57,23 @@ if(($result === false) || ($preparedquery->errno)) {
 } else {
  $updateSuccesfull = TRUE;
 }
+$preparedquery->close();
 
+$query = "UPDATE page_title ";
+$query .= "SET ";
+$query .= "page_title=?, ";
+$query .= "WHERE id=? ";
+
+$preparedquery = $dbaselink->prepare($query);
+$preparedquery->bind_param("si", $page_title, $id);
+$result = $preparedquery->execute();
+
+if(($result === false) || ($preparedquery->errno)) {
+ echo "Er is een fout opgetreden";
+ $updateSuccesfull = FALSE;
+} else {
+ $updateSuccesfull = TRUE;
+}
 $preparedquery->close();
 
 include("../../../dbase/closedb.php");

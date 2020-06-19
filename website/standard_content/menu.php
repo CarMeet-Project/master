@@ -2,6 +2,7 @@
     <ul>
         <li><a href="./index.php?action=welcome">Home</a></li>
         <li><a href="./index.php?action=agenda">Agenda</a></li>
+        <li><a href="./index.php?action=info">Info</a></li>
         <li><a href="./index.php?action=aboutUs">Over Ons</a></li>
         <li><a href="./index.php?action=contact">Contact</a></li>
 

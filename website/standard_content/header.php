@@ -17,13 +17,16 @@
     <link rel="stylesheet" href="./assets/header.css"/>
     <!-- <link rel="stylesheet" href="./assets/footer.css"/> -->
     <link rel="stylesheet" href="./assets/grid.css">
-  	<title>Car meet</title>
+
+    <?php
+    session_start();
+    require("./content/handler/titleHandler.php");
+    ?>
 </head>
 <body>
 
 <?php
-session_start();
-require("menu.php");
+require("./standard_content/menu.php");
 
 if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
   if((isset($_GET["cms"])) && (!empty($_GET["cms"])) && ($_GET["cms"] == "1")) {

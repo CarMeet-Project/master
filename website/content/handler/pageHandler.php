@@ -1,82 +1,9 @@
 <?php
 
-
-// ALERTS
-if((isset($_GET["al"])) && (!empty($_GET["al"])) && (isset($_GET["suc"])) && (!empty($_GET["suc"]))) {
-
-  $alert = $_GET["al"];
-  if((isset($_GET["id"])) && (!empty($_GET["id"]))) {
-    $id = $_GET["id"];
-  }
-
-  switch ($_GET["suc"]) {
-    case "2":
-      $succesFull = "FALSE";
-      break;
-
-    case "1":
-      $succesFull = "TRUE";
-      break;
-
-    default:
-      $alert = "";
-      break;
-  }
-
-  switch ($alert) {
-    case "create":
-      require("./content/alerts/create.php");
-      break;
-
-    case "update":
-      require("./content/alerts/update.php");
-      break;
-
-    case "delete":
-      require("./content/alerts/delete.php");
-      break;
-
-    case "deleted":
-      require("./content/alerts/deleted.php");
-      break;
-
-    case "multidelete":
-      require("./content/alerts/multiple_delete.php");
-      break;
-
-    case "undo":
-      require("./content/alerts/undo.php");
-      break;
-
-    case "archive":
-      require("./content/alerts/archive.php");
-      break;
-
-    case "mail":
-      require("./content/alerts/mail.php");
-      break;
-
-    case "logout":
-      require("./content/alerts/logout.php");
-      break;
-
-    case "login":
-      require("./content/alerts/login.php");
-      break;
-
-    default:
-      require("./content/alerts/error.php");
-      break;
-  }
-}
-
-
-// PAGES
-
 if(isset($_GET["action"])) {
   $action = $_GET["action"];
 } else {
-  $action = "welcome";
+  header("Location: ./index.php?action=welcome");
 }
 
 switch($action) {
@@ -102,15 +29,15 @@ switch($action) {
 
   case "new_meet":
     if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
-      require("./content/page/newmeet.php");
+      require("./content/meetup/newmeet.php");
     } else {
       require("./content/page/error.php");
     }
     break;
 
-   case "meet_page":
-     require("./content/page/meetpage.php");
-     break;
+  case "meet_page":
+    require("./content/meetup/meetpage.php");
+    break;
      
   case "login":
     if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
@@ -214,7 +141,7 @@ switch($action) {
 
   case 'cms':
     if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
-      require("./content/cms/index.php");
+      require("./content/cms/overview-cms.php");
     } else {
       require("./content/page/error.php");
     }
