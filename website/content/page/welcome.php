@@ -1,6 +1,6 @@
 <div>
   <div class="column-12 column-s-12 color">
-    <img class="mainpic"src="./assets/img/carmeetup.jpg" >
+    <img class="mainpic"src="./assets/img/carmeetup2.jpg" >
   </div>
 </div>
 
