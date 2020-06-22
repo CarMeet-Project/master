@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 19 jun 2020 om 20:09
+-- Gegenereerd op: 22 jun 2020 om 11:46
 -- Serverversie: 10.1.38-MariaDB
 -- PHP-versie: 7.3.3
 
@@ -76,7 +76,12 @@ INSERT INTO `footer_content` (`id`, `footer_content`) VALUES
 (16, 'Footer_content Meetdetails'),
 (17, 'Footer_content Voorbeeld Pagina'),
 (18, 'Footer_content Pagina Details'),
-(19, 'Footer_content Update Pagina');
+(19, 'Footer_content Update Pagina'),
+(20, 'Footer_content '),
+(21, 'Footer_content '),
+(22, 'Footer_content '),
+(23, 'Footer_content '),
+(24, 'Footer_content ');
 
 -- --------------------------------------------------------
 
@@ -112,7 +117,12 @@ INSERT INTO `header_content` (`id`, `header_content`) VALUES
 (16, 'Header_content Meetdetails'),
 (17, 'Header_content Voorbeeld Pagina'),
 (18, 'Header_content Pagina Details'),
-(19, 'Header_content Update Pagina');
+(19, 'Header_content Update Pagina'),
+(20, 'Header_content uitloggen'),
+(21, 'Header_content Updaten producten'),
+(22, 'Header_content productten deactiveren'),
+(23, 'Header_content Gedeactiveerd producten'),
+(24, 'Header_content Permanent Verwijderen');
 
 -- --------------------------------------------------------
 
@@ -148,7 +158,12 @@ INSERT INTO `header_title` (`id`, `header_title`) VALUES
 (16, 'Header_title Meetdetails'),
 (17, 'Header_title Voorbeeld Pagina'),
 (18, 'Header_title Pagina Details'),
-(19, 'Header_title Update Pagina');
+(19, 'Header_title Update Pagina'),
+(20, 'Header_title Uitloggen'),
+(21, 'Header_title Update Producten'),
+(22, 'Header_title Deactiveer Producten'),
+(23, 'Header_title Gedeactiveerd Producten'),
+(24, 'Header_title Permanent Verwijderen');
 
 -- --------------------------------------------------------
 
@@ -229,7 +244,12 @@ INSERT INTO `midpage_content` (`id`, `midpage_content`) VALUES
 (16, 'Midpage_content Meetdetails'),
 (17, 'Midpage_content Voorbeeld Pagina'),
 (18, 'Midpage_content Pagina Details'),
-(19, 'Midpage_content Update Pagina');
+(19, 'Midpage_content Update Pagina'),
+(20, 'Midpage_content '),
+(21, 'Midpage_content '),
+(22, 'Midpage_content '),
+(23, 'Midpage_content '),
+(24, 'Midpage_content ');
 
 -- --------------------------------------------------------
 
@@ -267,7 +287,12 @@ INSERT INTO `page` (`id`, `page_name`, `action_name`, `customer_page`) VALUES
 (16, 'Meet details', 'meet_page', 'TRUE'),
 (17, 'Zie pagina in cms', 'page_cms', 'FALSE'),
 (18, 'Details CMS Pagina', 'details_cms', 'FALSE'),
-(19, 'Update CMS Pagina', 'update_cms', 'FALSE');
+(19, 'Update CMS Pagina', 'update_cms', 'FALSE'),
+(20, 'Uitloggen', 'logout', 'FALSE'),
+(21, 'Update Producten', 'update_product', ''),
+(22, 'Deactiveer Producten', 'delete_product', ''),
+(23, 'Gedeactiveerde producten', 'deleted_product', ''),
+(24, 'Permanent verwijderen', 'archive_deleted_product', '');
 
 -- --------------------------------------------------------
 
@@ -303,7 +328,12 @@ INSERT INTO `page_title` (`id`, `page_title`) VALUES
 (16, 'Meetdetails'),
 (17, 'Voorbeeld Pagina'),
 (18, 'Pagina Details'),
-(19, 'Update Pagina');
+(19, 'Update Pagina'),
+(20, 'Uitloggen'),
+(21, 'Update Producten'),
+(22, 'Deactiveer Producten'),
+(23, 'Gedeactiveerde producten'),
+(24, 'Permanent verwijderen');
 
 -- --------------------------------------------------------
 
@@ -432,13 +462,13 @@ ALTER TABLE `accounts`
 -- AUTO_INCREMENT voor een tabel `meetup`
 --
 ALTER TABLE `meetup`
-  MODIFY `id` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT voor een tabel `page`
 --
 ALTER TABLE `page`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT voor een tabel `shop_products`
