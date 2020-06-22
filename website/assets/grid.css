@@ -90,10 +90,10 @@
     border-radius: 25px;
     padding: 5px;
     background-color: #2980b9;
-    color: blue;
+    color: #ffffff;
   }
 
   .link:hover{
     background-color: #33b5e5;
-    color: blue;
+    color: #ffffff;
   }
