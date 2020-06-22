@@ -31,7 +31,7 @@
 
 <div>
   <div class="column-12 column-s-12 color">
-    <p>Lorem ipsum dolor sit amet.</p>
+  <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by SmoothRoadCode.
   </div>
 </div>
 
