@@ -58,7 +58,7 @@ if($sendMail == TRUE) {
 
   header("Location: ../../index.php?action=contact&al=mail&suc=1");
 } else {
-  // header("Location: ../../index.php?action=welcome&al=mail&suc=2");
+  header("Location: ../../index.php?action=welcome&al=mail&suc=2");
 }
 
 
