@@ -6,8 +6,8 @@
         <li><a href="./index.php?action=aboutUs">About Us</a></li>
         <li><a href="./index.php?action=contact">Contact</a></li>
 
-        <!-- if loggedin -->
-        <?php if ((isset($_SESSION['loggedin'])) && ($_SESSION["loggedin"] == "TRUE")) { ?>
+        <!-- if admin-loggedin -->
+        <?php if ((isset($_SESSION['admin-admin-loggedin'])) && ($_SESSION["admin-admin-loggedin"] == "TRUE")) { ?>
 
         <li class="dropdown">
             <a href="./index.php?action=read_product" class="dropbtn">Shop</a>

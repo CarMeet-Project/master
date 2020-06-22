@@ -5,7 +5,8 @@ if($succesFull == "FALSE") { ?>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
-  Er is een fout opgetreden probeer het <strong>opnieuw</strong></div>
+  Verficatie <strong>Niet</strong> geslaagd, code onjuist.
+</div>
 
 <?php } else { ?>
 
@@ -13,8 +14,7 @@ if($succesFull == "FALSE") { ?>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
-
-  Bevestigings mail <strong>Succesvol</strong> verstuurd
+  <strong>Succesvol</strong> geverifieerd
 </div>
 
 <?php } ?>

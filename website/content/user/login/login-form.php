@@ -1,7 +1,7 @@
 <div class="container">
-    <h1>Login voor WebBeheer</h1>
+    <h1>Login</h1>
 
-    <form action="./content/login/authenticate.php" method="POST">
+    <form action="./content/user/login/authenticate.php" method="POST">
     <div class="form-group">
         <label for="username">
             <i class="fas fa-user"></i>
@@ -28,9 +28,9 @@
                 </div>
 
                 <div class="col floatR noMargin">
-                    <a class="btn btn-outline-info" href="./index.php?action=login">Login Bezoekers</a>
+                    <a class="btn btn-outline-info" href="./index.php?action=login_admin">Login Beheer</a>
                 </div>
-
+                
             </div>
         </div>
     

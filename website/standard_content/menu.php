@@ -6,8 +6,8 @@
         <li><a href="./index.php?action=aboutUs">Over Ons</a></li>
         <li><a href="./index.php?action=contact">Contact</a></li>
 
-        <!-- if loggedin -->
-        <?php if ((isset($_SESSION['loggedin'])) && ($_SESSION["loggedin"] == "TRUE")) { ?>
+        <!-- if admin-loggedin -->
+        <?php if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE")) { ?>
 
         <li class="dropdown">
             <a href="./index.php?action=shop">Winkel</a>
@@ -20,12 +20,19 @@
             </div>
         </li>
         <li><a href="./index.php?action=cms">CMS</a></li>
+        <li><a href="./index.php?action=my_account">Account</a></li>
         <li><a href="./index.php?action=logout">Uitloggen</a></li>
 
-        <?php } else { ?>
+        <?php } else {
+            if((isset($_SESSION["loggedin"])) && ($_SESSION["loggedin"] == "TRUE")) { ?>
+                <li><a href="./index.php?action=shop">Winkel</a></li>
+                <li><a href="./index.php?action=my_account">Account</a></li>
+                <li><a href="./index.php?action=logout">Uitloggen</a></li>
 
+           <?php } else { ?>
             <li><a href="./index.php?action=shop">Winkel</a></li>
             <li><a href="./index.php?action=login">Inloggen</a></li>
+          <?php } ?>
         
         <?php } ?>
 
