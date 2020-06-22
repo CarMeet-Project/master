@@ -84,3 +84,16 @@
     height: 60%;
     border-radius: 5%;
   }
+
+  .link{
+    border: black 3px solid;
+    border-radius: 25px;
+    padding: 5px;
+    background-color: #2980b9;
+    color: blue;
+  }
+
+  .link:hover{
+    background-color: #33b5e5;
+    color: blue;
+  }
