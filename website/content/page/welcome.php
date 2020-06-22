@@ -31,6 +31,6 @@
 
 <div>
   <div class="column-12 column-s-12 color">
-
   </div>
 </div>
+
