@@ -14,8 +14,24 @@ if ( !isset($_POST['username'], $_POST['password']) ) {
 	exit('Please fill both the username and password fields!');
 }
 
+$username_post = $_POST["username"];
+$mailCharacter = "/@/";
+$temp_username_post = $username_post;
+$temp_username_post = preg_replace($mailCharacter,"",$temp_username_post);
+
+if($temp_username_post === $username_post) {
+  $usernameOrEmail = "username";
+} else {
+  $usernameOrEmail = "email";
+}
+
+$query = "SELECT id, password ";
+$query .= "FROM accounts ";
+$query .= "WHERE " . $usernameOrEmail . "=? ";
+$query .= "LIMIT 1";
+
 // Prepare our SQL, preparing the SQL statement will prevent SQL injection.
-if ($preparedquery = $dbaselink->prepare('SELECT id, password FROM accounts WHERE username = ?')) {
+if ($preparedquery = $dbaselink->prepare($query)) {
 	// Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
 	$preparedquery->bind_param('s', $_POST['username']);
 	$preparedquery->execute();

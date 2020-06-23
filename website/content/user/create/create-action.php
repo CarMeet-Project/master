@@ -13,7 +13,7 @@ if((empty($_POST["username"])) || (empty($_POST["email"])) || (empty($_POST["pas
   exit();
 }
 
-$verifyNumber = NULL;
+$verifyNumber = "";
 
 for($i = 0; $i < 4; $i++) {
   $number = rand(0,9);
@@ -26,13 +26,36 @@ $email = $_POST["email"];
 $password = $_POST["password"];
 $verfied = "FALSE";
 
-$query = "INSERT INTO ";
-$query .= "users(email, ";
+$query = "SELECT * ";
+$query .= "FROM users ";
+$query .= "WHERE email=? ";
+$query .= "OR username=? ";
+
+$preparedquery = $dbaselink->prepare($query);
+$preparedquery->bind_param("ss", $email, $username);
+$result = $preparedquery->execute();
+
+if(($result===FALSE) || ($preparedquery->errno)) {
+  echo "er is een fout opgetereden";
+  exit();
+} else {
+  $result = $preparedquery->get_result();
+
+  if($result->num_rows !== 0) {
+    header("Location: ../../../index.php?action=create_user&al=alrdy_exist&suc=2");
+    exit();
+  }
+}
+$preparedquery->close();
+
+
+$query = "INSERT INTO users ";
+$query .= "(email, ";
 $query .= "username, ";
 $query .= "password, ";
 $query .= "verify_number, ";
-$query .= "verified ";
-$query .= "values(?, ?, ?, ?, ?) ";
+$query .= "verified) ";
+$query .= "VALUES (?, ?, ?, ?, ?) ";
 
 $preparedquery = $dbaselink->prepare($query);
 $preparedquery->bind_param("sssss", $email, $username, $password, $verifyNumber, $verfied);
@@ -49,16 +72,17 @@ $preparedquery->close();
 if($succied) {
 
   $CarMeet_mail = "carmeetproject2020@gmail.com";
-  $customer_name = $name;
+  $customer_name = $username;
   $customer_mail = $email;
   $customer_headers = "From: CarMeet WebSite " . $CarMeet_mail;
   
   $sendMail = TRUE;
+  $contactForm = FALSE;
   
-  $subject = $name;
+  $subject = $username;
   $message = $verifyNumber;
   $customer_subject = "Je verificatiecode voor je account: " . $subject;
-  $customer_body = "Jou verificatie code is: " . $message;
+  $customer_body = "Jou verificatie code is: " . $message . " ";
   $customer_body .= "Voer deze code in bij \"account\" onder het kopje \"verificatie\"";
   $customer_body .= " <br><br>Met Vriendelijke Groet,<br>Team CarMeet";
   
@@ -67,6 +91,8 @@ if($succied) {
   $CarMeet_headers = "From: Backend-program " . $CarMeet_mail;
   require("../../mail/sendEmail.php");
 }
+
+header("Location: ../../../index.php?action=welcome&al=create&suc=1");
 
 include("../../../dbase/closedb.php");
 
