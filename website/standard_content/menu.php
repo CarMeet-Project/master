@@ -1,5 +1,8 @@
+ <div class="menuback">
 <nav class="global">
-    <ul>
+  
+  
+   <ul>
         <li><a href="./index.php?action=welcome">Home</a></li>
         <li><a href="./index.php?action=agenda">Agenda</a></li>
         <li><a href="./index.php?action=info">Info</a></li>
@@ -16,7 +19,7 @@
                 <a href="./index.php?action=add_product">Toevoegen</a>
                 <a href="./index.php?action=updatelist_product">Wijzigen</a>
                 <a href="./index.php?action=deletelist_product">Deactiveren</a>
-                <a href="./index.php?action=deletedlist_product">Verwijderde</a>
+                <a href="./index.php?action=deletedlist_product">Verwijderen</a>
             </div>
         </li>
         <li><a href="./index.php?action=cms">CMS</a></li>
@@ -37,4 +40,8 @@
         <?php } ?>
 
     </ul>
+	
+	
 </nav>
+
+</div>
