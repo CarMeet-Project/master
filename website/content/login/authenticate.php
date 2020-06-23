@@ -3,10 +3,10 @@
 session_start();
 
 // Change this to your connection info.
-include("../../../dbase/config.php");
+include("../../dbase/config.php");
 
 // Try and connect using the info above.
-include("../../../dbase/opendb.php");
+include("../../dbase/opendb.php");
 
 // Now we check if the data from the login form was submitted, isset() will check if the data exists.
 if ( !isset($_POST['username'], $_POST['password']) ) {
@@ -25,7 +25,7 @@ if($temp_username_post === $username_post) {
   $usernameOrEmail = "email";
 }
 
-$query = "SELECT id, password, verified ";
+$query = "SELECT id, password ";
 $query .= "FROM accounts ";
 $query .= "WHERE " . $usernameOrEmail . "=? ";
 $query .= "LIMIT 1";
@@ -39,7 +39,7 @@ if ($preparedquery = $dbaselink->prepare($query)) {
 	$preparedquery->store_result();
 
     if ($preparedquery->num_rows > 0) {
-        $preparedquery->bind_result($id, $password, $verified);
+        $preparedquery->bind_result($id, $password);
         $preparedquery->fetch();
         // Account exists, now we verify the password.
         // Note: remember to use password_hash in your registration file to store the hashed passwords.
@@ -49,23 +49,22 @@ if ($preparedquery = $dbaselink->prepare($query)) {
             session_regenerate_id();
             $_SESSION['admin-loggedin'] = TRUE;
             $_SESSION['name'] = $_POST['username'];
-            $_SESSION['verified-loggedin'] = $verified;
             $_SESSION['id'] = $id;
-            header('Location: ../../../index.php?action=welcome&al=login&suc=1');
+            header('Location: ../../index.php?action=welcome&al=login&suc=1');
         } else {
             $preparedquery->close();
             echo 'Verkeerde gebruikersnaam of wachtwoord ingevoerd!<br>';
-            header('Location: ../../../index.php?action=login&al=login&suc=2');
+            header('Location: ../../index.php?action=login&al=login&suc=2');
             exit();
         }
     } else {
         $preparedquery->close();
         echo 'Verkeerde gebruikersnaam of wachtwoord ingevoerd!<br>';
-        header('Location: ../../../index.php?action=login&al=login&suc=2');
+        header('Location: ../../index.php?action=login&al=login&suc=2');
         exit();
     }
 
 }
-include("../../../dbase/closedb.php");
+include("../../dbase/closedb.php");
 
 ?>

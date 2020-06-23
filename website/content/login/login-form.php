@@ -1,7 +1,7 @@
 <div class="container">
     <h1>Login voor WebBeheer</h1>
 
-    <form action="./content/admin/login/authenticate.php" method="POST">
+    <form action="./content/login/authenticate.php" method="POST">
     <div class="form-group">
         <label for="username">
             <i class="fas fa-user"></i>
