@@ -2,6 +2,10 @@
     include("./dbase/config.php");
     include("./dbase/opendb.php");
 
+    echo "<div class='floatR'>";
+    echo "<a class='btn btn-outline-success' href='./index.php?action=agenda'>Terug naar agenda</a>";
+    echo "</div>";
+
     $sql = "SELECT id, userid, header, description, location, date FROM meetup";
 
     $result = mysqli_query($conn,$sql);
@@ -16,6 +20,7 @@
     echo "<a href='./index.php?action=meet-page&id=". $row["id"] . "'>" . $row["header"] . "</a>" . "<p>" . $row["date"] . "<br>";
     echo $row["location"] . "</p>";
     echo "<p>" . $row["description"] . "</p>";
+    echo "<a class='btn btn-outline-danger' href='./content/meetup/delete-meet.php?id=" . $row["id"] . "'>verwijder</a>";
     echo "</div><br><br>";
     }
 
