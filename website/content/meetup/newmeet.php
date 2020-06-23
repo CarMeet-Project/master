@@ -8,5 +8,6 @@
     <input type="text" name="discription" placeholder="discription">
     <input type="text" name="location" placeholder="locatie">
     <input type="date" name="date">
+    <input type="text" name="ticketprice" placeholder="ticketprice">
     <input type="submit" name="" value="submit">
 </form>

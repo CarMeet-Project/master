@@ -32,10 +32,10 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
         // Account exists, now we verify the password.
         // Note: remember to use password_hash in your registration file to store the hashed passwords.
         if ($_POST['password'] === $password) {
-            // Verification success! User has loggedin!
+            // Verification success! User has admin-loggedin!
             // Create sessions so we know the user is logged in, they basically act like cookies but remember the data on the server.
             session_regenerate_id();
-            $_SESSION['loggedin'] = TRUE;
+            $_SESSION['admin-loggedin'] = TRUE;
             $_SESSION['name'] = $_POST['username'];
             $_SESSION['id'] = $id;
             header('Location: ../index.php');

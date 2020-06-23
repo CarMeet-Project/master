@@ -9,7 +9,7 @@ session_unset();
 session_destroy();
 
 // Redirect to the:
-header('Location: ./index.php?al=logout&suc=1');
+header('Location: ./index.php?action=welcome&al=logout&suc=1');
 
 
 ?>

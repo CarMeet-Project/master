@@ -3,11 +3,16 @@
 include("./dbase/config.php");
 include("./dbase/opendb.php");
 
+$customer_page = "TRUE";
 
 // count rows
-$query = "SELECT * FROM cms ";
+$query = "SELECT * ";
+$query .= "FROM page ";
+$query .= "WHERE customer_page=? ";
+
 
 $preparedquery = $dbaselink->prepare($query);
+$preparedquery->bind_param("s", $customer_page);
 $preparedquery->execute();
 
 if($preparedquery->errno) {
@@ -47,10 +52,12 @@ if(!isset($_GET["page"])) {
 $currentPageContent = ($currentPage-1)*$maxProductsPerPage;
 
 $query = "SELECT * ";
-$query .= "FROM cms ";
+$query .= "FROM page ";
+$query .= "WHERE customer_page=? ";
 // $query .= "LIMIT ?, ? ";
 
 $preparedquery = $dbaselink->prepare($query);
+$preparedquery->bind_param("s", $customer_page);
 // $preparedquery->bind_param("ii", $currentPageContent, $maxProductsPerPage);
 $result = $preparedquery->execute();
 
@@ -66,11 +73,9 @@ if(($preparedquery->errno) || ($result===FALSE)) {
     echo "<table class=\"table\">";
     echo "<thead class=\"thead-dark\">";
     echo "  <tr>";
-    echo "    <th scope=\"col\">#id</th>";
     echo "    <th scope=\"col\">#name</th>";
-    echo "    <th scope=\"col\">page title</th>";
-    echo "    <th scope=\"col\">header title</th>";
-    echo "    <th scope=\"col\">Pagina</th>";
+    echo "    <th scope=\"col\">Action Name</th>";
+    echo "    <th scope=\"col\">Zie Pagina</th>";
     echo "    <th scope=\"col\">Details</th>";
     echo "    <th scope=\"col\">Wijzigen</th>";
     // echo "    <th scope=\"col\">Aantal producten per pagina: </th>";
@@ -89,12 +94,10 @@ if(($preparedquery->errno) || ($result===FALSE)) {
    while($row = $result->fetch_assoc()) {
 
   	  echo "<tr>";
-
-      echo "  <th scope=\"row\">" . $row["id"] . "</th>";
       
-      echo "  <td>#" . $row["name"] . "</td>";
-      echo "  <td>" . $row["page_title"] . "</td>";
-      echo "  <td>" . $row["header_title"] . "</td>";
+      echo "  <th scope=\"row\">#" . $row["page_name"] . "</th>";
+
+      echo "  <td>" . $row["action_name"] . "</td>";
 
 
       echo "  <td>";

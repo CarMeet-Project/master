@@ -119,12 +119,17 @@ margin:               0px;
 
 .floatR .btn {
   float:               right;
-  margin:              0px 5px 0px 5px;
+  margin:              5px 5px 5px 5px;
 }
 
-/* .col {
+.floatR.noMargin .btn {
+  float:               right;
+  margin:              0px!important;
+}
+
+.col {
   padding:             10px 15px 10px 15px;
-} */
+}
 
 th.checkboxTable {
   padding-right:      0px!important;
