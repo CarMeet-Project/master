@@ -9,7 +9,22 @@ session_unset();
 session_destroy();
 
 // Redirect to the:
-header('Location: ./index.php?action=welcome&al=logout&suc=1');
+if((isset($_GET["redir"])) && (!empty($_GET["redir"]))) {
+  $redir = $_GET["redir"];
+
+  switch ($redir) {
+    case 'create_user':
+      header('Location: ./index.php?action=create_user&al=logout&suc=1');
+      break;
+    
+    default:
+      header('Location: ./index.php?action=welcome&al=logout&suc=1');
+      break;
+    }
+
+  } else {
+    header('Location: ./index.php?action=welcome&al=logout&suc=1');
+  }
 
 
 ?>

@@ -35,7 +35,25 @@ switch($action) {
     break;
 
 
-  // ADMIN (LOGIN/LOGOUT)
+  // GENERAL ACCOUNT-ACTIONS
+  case "logout":
+    if (((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE")) || ((isset($_SESSION["loggedin"])) && ($_SESSION["loggedin"] == "TRUE"))) {
+      require("./content/general/logout/logout.php");
+    } else {
+      require("./content/admin/login/login-form.php");
+    }
+    break;
+
+  case "my_account":
+    if (((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE")) || ((isset($_SESSION["loggedin"])) && ($_SESSION["loggedin"] == "TRUE"))) {
+      require("./content/general/account/my-account.php");
+    } else {
+      require("./content/page/error.php");
+    }
+    break;
+
+
+  // ADMIN (LOGIN/LOGOUT) & ADMIN-ACTIONS
   case "login_admin":
     if (((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE")) || ((isset($_SESSION["loggedin"])) && ($_SESSION["loggedin"] == "TRUE"))) {
       require("./content/general/logout/logout.php");
@@ -44,11 +62,21 @@ switch($action) {
     }
     break;
 
-  case "logout":
-    if (((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE")) || ((isset($_SESSION["loggedin"])) && ($_SESSION["loggedin"] == "TRUE"))) {
-      require("./content/general/logout/logout.php");
+  case "create_admin":
+    if((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE")) {
+      if((isset($_SESSION["verified-loggedin"])) && ($_SESSION["verified-loggedin"] == "TRUE")) {
+      require("./content/admin/create/create-form.php");
+      }
     } else {
-      require("./content/admin/login/login-form.php");
+      require("./content/page/error.php");
+    }
+    break;
+
+  case "verify_admin_account":
+    if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE")) {
+      require("./content/admin/account/verify-form.php");
+    } else {
+      require("./content/page/error.php");
     }
     break;
 
@@ -65,17 +93,9 @@ switch($action) {
 
   case "create_user":
     if (((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE")) || ((isset($_SESSION["loggedin"])) && ($_SESSION["loggedin"] == "TRUE"))) {
-      require("./content/page/error.php");
+      require("./content/general/logout/logout.php");
     } else {
       require("./content/user/create/create-form.php");
-    }
-    break;
-
-  case "my_account":
-    if (((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE")) || ((isset($_SESSION["loggedin"])) && ($_SESSION["loggedin"] == "TRUE"))) {
-      require("./content/general/account/my-account.php");
-    } else {
-      require("./content/page/error.php");
     }
     break;
 
@@ -86,6 +106,7 @@ switch($action) {
       require("./content/page/error.php");
     }
     break;
+
 
   // AGENDA & MEETS
   case "new_meet":

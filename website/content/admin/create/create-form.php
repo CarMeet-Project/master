@@ -1,17 +1,17 @@
 <div class="container">
-  <h1>Account aanmaken</h1>
+  <h1>Admin Account aanmaken</h1>
 
-  <form action="./content/user/create/create-action.php" method="POST">
+  <form action="./content/admin/create/create-action.php" method="POST">
 
     <div class="form-row">
-      <div class="form-group col-6">
+      <div class="form-group col">
         <label for="username">
           <i class="fas fa-user"></i>
         </label>
         <input class="form-control"type="text" name="username" placeholder="Gebruikersnaam" id="username" required>
       </div>
 
-      <div class="form-group col-6">
+      <div class="form-group col">
         <label for="email">
           <i class="fas fa-at"></i>
         </label>
@@ -43,11 +43,11 @@
           <div class="col-8 form-control">
 
             <div class="col">
-              <p class="text-center form-control-plaintext">EXTRA KNOP MET TEKST</p>
+              <p class="text-center form-control-plaintext">Wil je een Bezoekers account?</p>
             </div>
 
             <div class="col">
-              <a class="btn btn-outline-success form-control" href="#">KNOP</a>
+              <a class="btn btn-outline-success form-control" href="./index.php?action=create_user&redir=create_user">Maak Account</a>
             </div>
 
           </div>

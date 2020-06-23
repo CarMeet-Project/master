@@ -4,5 +4,8 @@
   </div>
 <?php } ?>
 
-
-<a href="./index.php?action=verify_account" class="btn btn-outline-primary">Verifiëren</a>
+<?php if((isset($_SESSION["admin-loggedin"])) && ($_SESSION["admin-loggedin"] == "TRUE")) { ?>
+  <a href="./index.php?action=verify_admin_account" class="btn btn-outline-primary">Verifiëren</a>
+<?php } else { ?>
+  <a href="./index.php?action=verify_account" class="btn btn-outline-primary">Verifiëren</a>
+<?php } ?>
