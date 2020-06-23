@@ -236,6 +236,43 @@ switch($action) {
     }
     break;
 
+  // PAGINAS
+  case 'page_1':
+    require("./content/page/page1.php");
+    break;
+
+  case 'page_2':
+    require("./content/page/page2.php");
+    break;
+
+  case 'page_3':
+    require("./content/page/page3.php");
+    break;
+
+  case 'page_4':
+    require("./content/page/page4.php");
+    break;
+
+  case 'page_5':
+    require("./content/page/page5.php");
+    break;
+
+  case 'page_6':
+    require("./content/page/page6.php");
+    break;
+
+  case 'page_7':
+    require("./content/page/page7.php");
+    break;
+
+  case 'page_8':
+    require("./content/page/page8.php");
+    break;
+
+  case 'page_9':
+    require("./content/page/page9.php");
+    break;
+
 
   default:
     require("./content/page/error.php");
