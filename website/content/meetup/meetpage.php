@@ -3,7 +3,7 @@
 include("./dbase/config.php");
 include("./dbase/opendb.php");
 
-if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE")) { ?>
+if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE") && (isset($_SESSION["verified-loggedin"])) && ($_SESSION["verified-loggedin"] == "TRUE")) { ?>
     <div class="floatR">
         <a class="btn btn-outline-warning" href="./index.php?action=update_meet&id=<?php echo $row["id"]; ?>">Wijzigen</a>
         <a class="btn btn-outline-secondary" href="./index.php?action=agenda">Naar overzicht</a> 
