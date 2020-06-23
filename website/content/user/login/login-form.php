@@ -6,7 +6,7 @@
         <label for="username">
             <i class="fas fa-user"></i>
         </label>
-        <input class="form-control"type="text" name="username" placeholder="Gebruikersnaam" id="username" required>
+        <input class="form-control"type="text" name="username" placeholder="Gebruikersnaam/Email" id="username" required>
     </div>
 
     <div class="form-group">

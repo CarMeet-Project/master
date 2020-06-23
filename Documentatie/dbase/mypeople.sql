@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 23 jun 2020 om 00:48
+-- Gegenereerd op: 23 jun 2020 om 13:34
 -- Serverversie: 10.1.38-MariaDB
 -- PHP-versie: 7.3.3
 
@@ -32,15 +32,17 @@ CREATE TABLE `accounts` (
   `id` int(11) NOT NULL,
   `email` varchar(120) NOT NULL,
   `username` varchar(80) NOT NULL,
-  `password` varchar(80) NOT NULL
+  `password` varchar(80) NOT NULL,
+  `verify_number` text NOT NULL,
+  `verfied` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `accounts`
 --
 
-INSERT INTO `accounts` (`id`, `email`, `username`, `password`) VALUES
-(1, 'admin@admin.nl', 'admin', 'admin');
+INSERT INTO `accounts` (`id`, `email`, `username`, `password`, `verify_number`, `verfied`) VALUES
+(1, 'admin@admin.nl', 'admin', 'admin', '0167', 'TRUE');
 
 -- --------------------------------------------------------
 
@@ -387,6 +389,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Gegevens worden geëxporteerd voor tabel `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `username`, `password`, `verify_number`, `verified`) VALUES
+(9, 'boskaboutertje@outlook.com', 'Bob Nab', 'SuperGeheimWachtwoordVanBob', '3969', 'TRUE');
+
+--
 -- Indexen voor geëxporteerde tabellen
 --
 
@@ -482,7 +491,7 @@ ALTER TABLE `shop_products`
 -- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Beperkingen voor geëxporteerde tabellen

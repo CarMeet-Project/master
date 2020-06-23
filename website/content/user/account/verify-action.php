@@ -20,10 +20,10 @@ $verifyNumber_Post = $_POST["verifyNumber"];
 $query = "SELECT verify_number ";
 $query .= "FROM users ";
 $query .= "WHERE id=? ";
-$query .= "LIMMIT 1 ";
+$query .= "LIMIT 1 ";
 
 $preparedquery = $dbaselink->prepare($query);
-$preparedquery->bind_param("s", $id);
+$preparedquery->bind_param("i", $id);
 $result = $preparedquery->execute();
 
 if(($result===FALSE) || ($preparedquery->errno)) {
@@ -46,33 +46,33 @@ if(($result===FALSE) || ($preparedquery->errno)) {
 $preparedquery->close();
 
 if($verifyNumber_DB == $verifyNumber_Post) {
-  $verified = TRUE;
+  $verified = "TRUE";
 } else {
-  $verified = FALSE;
-  header("Location: ./index.php?action=welcome&al=verify&suc=2");
+  $verified = "FALSE";
+  header("Location: ../../../index.php?action=welcome&al=verify&suc=2");
   exit();
 }
 
 $query = "UPDATE users ";
 $query .= "SET verified=? ";
 $query .= "WHERE id=? ";
-$query .= "LIMMIT 1 ";
+$query .= "LIMIT 1 ";
 
 $preparedquery = $dbaselink->prepare($query);
-$preparedquery->bind_param("ss", $verified, $id);
+$preparedquery->bind_param("si", $verified, $id);
 $result = $preparedquery->execute();
 
 if(($result===false) || ($preparedquery->errno)) {
 
   echo "Er is een fout opgetreden";
   $preparedquery->close();
-  header("Location: ./index.php?action=welcome&al=verify&suc=2");
+  header("Location: ../../../index.php?action=welcome&al=verify&suc=2");
   exit();
 
 } else {
 
   $preparedquery->close();
-  header("Location: ./index.php?action=welcome&al=verify&suc=1");
+  header("Location: ../../../index.php?action=welcome&al=verify&suc=1");
   exit();
 
 }
