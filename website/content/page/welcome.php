@@ -9,7 +9,7 @@
   <div class="aside">
     <p><img class="imgclass_homegrid" src="./assets/img/car.jpg" ></p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab exercitationem ea quaerat, repudiandae doloremque ipsam alias suscipit. Eius illo repudiandae molestias voluptas explicabo quae, tempore qui ipsa! Possimus, asperiores voluptas.</p>
-    <a href="https://www.youtube.com/" class="link">lees meer</a>
+    <a class="btn btn-primary" href="https://www.youtube.com/" target="_blank">de link</a>
   </div>
 </div>
 
@@ -17,7 +17,7 @@
   <div class="aside">
     <p><img class="imgclass_homegrid" src="./assets/img/carmeet.jpg" ></p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab exercitationem ea quaerat, repudiandae doloremque ipsam alias suscipit. Eius illo repudiandae molestias voluptas explicabo quae, tempore qui ipsa! Possimus, asperiores voluptas.</p>
-    <a href="https://www.youtube.com/" class="link">lees meer</a>
+    <a class="btn btn-primary" href="https://www.youtube.com/" target="_blank">de link</a>
   </div>
 </div>
 
@@ -25,13 +25,13 @@
   <div class="aside">
     <p><img class="imgclass_homegrid" src="./assets/img/car.jpg" ></p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab exercitationem ea quaerat, repudiandae doloremque ipsam alias suscipit. Eius illo repudiandae molestias voluptas explicabo quae, tempore qui ipsa! Possimus, asperiores voluptas.</p>
-    <a href="https://www.youtube.com/" class="link">lees meer</a>
+    <a class="btn btn-primary" href="https://www.youtube.com/" target="_blank">de link</a>
   </div>
 </div>
 
 <div>
   <div class="column-12 column-s-12 color">
-    <p>Lorem ipsum dolor sit amet.</p>
+  Copyright &copy; 2020 All Rights Reserved by SmoothRoadCod
   </div>
 </div>
 

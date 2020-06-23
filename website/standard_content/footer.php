@@ -17,7 +17,7 @@
           <li><a href="./index.php?action=agenda">Agenda</a></li>
           <li><a href="./index.php?action=contact">Contact</a></li>
           <li><a href="./index.php?action=aboutUs">OverOns</a></li>
-          <?php if ((isset($_SESSION['loggedin'])) && ($_SESSION["loggedin"] == "TRUE")) { ?>
+          <?php if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION["admin-loggedin"] == "TRUE")) { ?>
           <li><a href="./index.php?action=logout">Uitloggen</a></li>
           <?php } else { ?>
           <li><a href="./index.php?action=login">Inloggen</a></li>

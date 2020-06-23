@@ -5,7 +5,7 @@
         <title>Meetups</title>
     </head>
     <body>
-    <?php if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) { ?>
+    <?php if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE")) { ?>
         <div class="floatR">
         <a class="btn btn-outline-success" href="./index.php?action=new_meet">Meet toevoegen</a>
     </div>

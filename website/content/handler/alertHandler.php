@@ -62,6 +62,10 @@ if((isset($_GET["al"])) && (!empty($_GET["al"])) && (isset($_GET["suc"])) && (!e
       require("./content/alerts/login.php");
       break;
 
+    case "verify":
+      require("./content/alerts/verify.php");
+      break;
+
     default:
       require("./content/alerts/error.php");
       break;

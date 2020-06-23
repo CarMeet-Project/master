@@ -122,6 +122,11 @@ margin:               0px;
   margin:              5px 5px 5px 5px;
 }
 
+.floatR.noMargin .btn {
+  float:               right;
+  margin:              0px!important;
+}
+
 .col {
   padding:             10px 15px 10px 15px;
 }

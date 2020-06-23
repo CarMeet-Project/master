@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 22 jun 2020 om 11:46
+-- Gegenereerd op: 23 jun 2020 om 00:48
 -- Serverversie: 10.1.38-MariaDB
 -- PHP-versie: 7.3.3
 
@@ -172,23 +172,26 @@ INSERT INTO `header_title` (`id`, `header_title`) VALUES
 --
 
 CREATE TABLE `meetup` (
-  `id` int(225) NOT NULL,
-  `userid` int(225) NOT NULL,
-  `header` varchar(225) NOT NULL,
-  `description` varchar(225) NOT NULL,
-  `date` date NOT NULL
+  `id` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `header` text NOT NULL,
+  `description` text NOT NULL,
+  `place` text NOT NULL,
+  `time` time NOT NULL,
+  `date` date NOT NULL,
+  `ticketprice` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `meetup`
 --
 
-INSERT INTO `meetup` (`id`, `userid`, `header`, `description`, `date`) VALUES
-(7, 1, 'SmoothRoadCode', 'Smooth road code originele meetup', '2020-06-12'),
-(8, 1, 'Bobs Auto shop meet', 'Een meet bij bobs enige echte auto shop.', '2001-09-11'),
-(9, 1, 'Harisan Smoke en rem blok festival', 'Samen met harisan smoken en autos laten zien', '2069-02-28'),
-(10, 1, 'Marks firrari orgy', 'Mark houd van saaf', '2020-06-28'),
-(11, 1, 'Haitam zijn hentai tesla truck', 'Bekijk nu haitam zijn gloed nieuwe hentai tesla truck!!!', '2020-04-20');
+INSERT INTO `meetup` (`id`, `userid`, `header`, `description`, `place`, `time`, `date`, `ticketprice`) VALUES
+(7, 1, 'SmoothRoadCode', 'Smooth road code originele meetup', 'place here', '00:00:00', '2020-06-12', 0),
+(8, 1, 'Bobs Auto shop meet', 'Een meet bij bobs enige echte auto shop.', 'Bij Bob', '00:00:00', '2001-09-11', 0),
+(9, 1, 'Harisan Smoke en rem blok festival', 'Samen met harisan smoken en autos laten zien', 'Bij Harisan', '00:00:00', '2069-02-28', 0),
+(10, 1, 'Marks firrari orgy', 'Mark houd van saaf', 'Bij Mark', '00:00:00', '2020-06-28', 0),
+(11, 1, 'Haitam zijn hentai tesla truck', 'Bekijk nu haitam zijn gloed nieuwe hentai tesla truck!!!', 'Bij Haitam', '00:00:00', '2020-04-20', 0);
 
 -- --------------------------------------------------------
 
@@ -289,10 +292,14 @@ INSERT INTO `page` (`id`, `page_name`, `action_name`, `customer_page`) VALUES
 (18, 'Details CMS Pagina', 'details_cms', 'FALSE'),
 (19, 'Update CMS Pagina', 'update_cms', 'FALSE'),
 (20, 'Uitloggen', 'logout', 'FALSE'),
-(21, 'Update Producten', 'update_product', ''),
-(22, 'Deactiveer Producten', 'delete_product', ''),
-(23, 'Gedeactiveerde producten', 'deleted_product', ''),
-(24, 'Permanent verwijderen', 'archive_deleted_product', '');
+(21, 'Update Producten', 'update_product', 'TRUE'),
+(22, 'Deactiveer Producten', 'delete_product', 'FALSE'),
+(23, 'Gedeactiveerde producten', 'deleted_product', 'FALSE'),
+(24, 'Permanent verwijderen', 'archive_deleted_product', 'FALSE'),
+(25, 'login beheer', 'login_admin', 'TRUE'),
+(26, 'Maak account voor bezokers', 'create_user', 'TRUE'),
+(27, 'mijn Account', 'my_account', ''),
+(28, 'verify mijn account', 'verify_account', '');
 
 -- --------------------------------------------------------
 
@@ -372,17 +379,12 @@ INSERT INTO `shop_products` (`id`, `name`, `price`, `image`, `description`, `qty
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL
+  `email` varchar(120) NOT NULL,
+  `username` varchar(80) NOT NULL,
+  `password` varchar(80) NOT NULL,
+  `verify_number` varchar(4) NOT NULL,
+  `verified` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Gegevens worden geëxporteerd voor tabel `users`
---
-
-INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
-(2, 'falco', '525451@edu.rocmn.nl', '81dc9bdb52d04dc20036dbd8313ed055');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -462,13 +464,13 @@ ALTER TABLE `accounts`
 -- AUTO_INCREMENT voor een tabel `meetup`
 --
 ALTER TABLE `meetup`
-  MODIFY `id` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT voor een tabel `page`
 --
 ALTER TABLE `page`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT voor een tabel `shop_products`
@@ -480,7 +482,7 @@ ALTER TABLE `shop_products`
 -- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Beperkingen voor geëxporteerde tabellen

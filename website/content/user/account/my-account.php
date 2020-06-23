@@ -1,0 +1,1 @@
+<a href="./index.php?action=verify_account" class="btn btn-outline-primary">Verifiëren</a>
