@@ -25,7 +25,7 @@ if($temp_username_post === $username_post) {
   $usernameOrEmail = "email";
 }
 
-$query = "SELECT id, password, verified ";
+$query = "SELECT id, password ";
 $query .= "FROM users ";
 $query .= "WHERE " . $usernameOrEmail . "=? ";
 $query .= "LIMIT 1";
@@ -39,7 +39,7 @@ if ($preparedquery = $dbaselink->prepare($query)) {
 	$preparedquery->store_result();
 
     if ($preparedquery->num_rows > 0) {
-        $preparedquery->bind_result($id, $password, $verified);
+        $preparedquery->bind_result($id, $password);
         $preparedquery->fetch();
         // Account exists, now we verify the password.
         // Note: remember to use password_hash in your registration file to store the hashed passwords.
@@ -49,7 +49,6 @@ if ($preparedquery = $dbaselink->prepare($query)) {
             session_regenerate_id();
             $_SESSION['loggedin'] = TRUE;
             $_SESSION['name'] = $_POST['username'];
-            $_SESSION['verified-loggedin'] = $verified;
             $_SESSION['id'] = $id;
             header('Location: ../../../index.php?action=welcome&al=login&suc=1');
         } else {
