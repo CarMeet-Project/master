@@ -6,34 +6,28 @@ if(isset($_GET["action"])) {
   header("Location: ./index.php?action=welcome");
 }
 
-// KEEP NAV BAR IN ORDER PLEASE
 switch($action) {
-
-  // STANDARD
   case "welcome":
     require("./content/page/welcome.php");
-    break;
-
-  case "agenda":
-    require("./content/page/agenda.php");
     break;
 
   case "info":
     require("./content/page/information.php");
     break;
 
-  case "aboutUs":
-    require("./content/page/aboutUs.php");
-    break;
-
   case "contact":
     require("./content/page/contact.php");
+    break;
+
+  case "aboutUs":
+    require("./content/page/aboutUs.php");
     break;
 
   case "shop":
     require("./content/products/overview.php");
     break;
 
+<<<<<<< HEAD
 
   // GENERAL ACCOUNT-ACTIONS
   case "logout":
@@ -112,11 +106,37 @@ switch($action) {
   case "new_meet":
     if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE") && (isset($_SESSION["verified-loggedin"])) && ($_SESSION["verified-loggedin"] == "TRUE")) {
       require("./content/meetup/newmeet.php");
+=======
+  case "new_meet":
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+      require("./content/meetup/newmeet.php");
     } else {
       require("./content/page/error.php");
     }
     break;
 
+  case "meet_page":
+    require("./content/meetup/meetpage.php");
+    break;
+     
+  case "login":
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+      require("./content/logout/logout.php");
+    } else {
+      require("./content/login/login-form.php");
+    }
+    break;
+
+  case "logout":
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+      require("./content/logout/logout.php");
+>>>>>>> parent of cd6bc37... BIG UDPATE (ergens klein foutje kan nie tvinde)
+    } else {
+      require("./content/login/login-form.php");
+    }
+    break;
+
+<<<<<<< HEAD
   case "new_meet_request":
     if ((isset($_SESSION['verified-loggedin'])) && ($_SESSION['verified-loggedin'] == "TRUE")) {
       require("./content/meetup/newmeet-request.php");
@@ -127,12 +147,18 @@ switch($action) {
 
   case "meet_page":
     require("./content/meetup/meetpage.php");
+=======
+  case "agenda":
+    require("./content/page/agenda.php");
+>>>>>>> parent of cd6bc37... BIG UDPATE (ergens klein foutje kan nie tvinde)
     break;
 
-
-  // PRODUCT & PRODUCT-ACTIONS
   case 'add_product':
+<<<<<<< HEAD
     if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE") && (isset($_SESSION["verified-loggedin"])) && ($_SESSION["verified-loggedin"] == "TRUE")) {
+=======
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+>>>>>>> parent of cd6bc37... BIG UDPATE (ergens klein foutje kan nie tvinde)
       require("./content/products/add/add-form.php");
     } else {
       require("./content/page/error.php");
@@ -140,7 +166,11 @@ switch($action) {
     break;
 
   case 'read_product':
+<<<<<<< HEAD
     if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE") && (isset($_SESSION["verified-loggedin"])) && ($_SESSION["verified-loggedin"] == "TRUE")) {
+=======
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+>>>>>>> parent of cd6bc37... BIG UDPATE (ergens klein foutje kan nie tvinde)
       require("./content/products/read/read.php");
     } else {
       require("./content/page/error.php");
@@ -148,7 +178,11 @@ switch($action) {
     break;
 
   case 'read_details_product':
+<<<<<<< HEAD
     // if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE") && (isset($_SESSION["verified-loggedin"])) && ($_SESSION["verified-loggedin"] == "TRUE")) {
+=======
+    // if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+>>>>>>> parent of cd6bc37... BIG UDPATE (ergens klein foutje kan nie tvinde)
       require("./content/products/read/details.php");
     // } else {
     //   require("./content/page/error.php");
@@ -156,7 +190,11 @@ switch($action) {
     break;
 
   case 'updatelist_product':
+<<<<<<< HEAD
     if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE") && (isset($_SESSION["verified-loggedin"])) && ($_SESSION["verified-loggedin"] == "TRUE")) {
+=======
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+>>>>>>> parent of cd6bc37... BIG UDPATE (ergens klein foutje kan nie tvinde)
       require("./content/products/update/update-list.php");
     } else {
       require("./content/page/error.php");
@@ -164,7 +202,11 @@ switch($action) {
     break;
 
   case 'update_product':
+<<<<<<< HEAD
     if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE") && (isset($_SESSION["verified-loggedin"])) && ($_SESSION["verified-loggedin"] == "TRUE")) {
+=======
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+>>>>>>> parent of cd6bc37... BIG UDPATE (ergens klein foutje kan nie tvinde)
       require("./content/products/update/update-form.php");
     } else {
       require("./content/page/error.php");
@@ -172,7 +214,11 @@ switch($action) {
     break;
 
   case 'deletelist_product':
+<<<<<<< HEAD
     if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE") && (isset($_SESSION["verified-loggedin"])) && ($_SESSION["verified-loggedin"] == "TRUE")) {
+=======
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+>>>>>>> parent of cd6bc37... BIG UDPATE (ergens klein foutje kan nie tvinde)
       require("./content/products/delete/delete-list.php");
     } else {
       require("./content/page/error.php");
@@ -180,7 +226,11 @@ switch($action) {
     break;
 
   case 'delete_product':
+<<<<<<< HEAD
     if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE") && (isset($_SESSION["verified-loggedin"])) && ($_SESSION["verified-loggedin"] == "TRUE")) {
+=======
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+>>>>>>> parent of cd6bc37... BIG UDPATE (ergens klein foutje kan nie tvinde)
       require("./content/products/delete/delete-action.php");
     } else {
       require("./content/page/error.php");
@@ -188,7 +238,11 @@ switch($action) {
     break;
 
   case 'deletedlist_product':
+<<<<<<< HEAD
     if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE") && (isset($_SESSION["verified-loggedin"])) && ($_SESSION["verified-loggedin"] == "TRUE")) {
+=======
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+>>>>>>> parent of cd6bc37... BIG UDPATE (ergens klein foutje kan nie tvinde)
       require("./content/products/deleted/deleted-list.php");
     } else {
       require("./content/page/error.php");
@@ -196,7 +250,11 @@ switch($action) {
     break;
 
   case 'deleted_product':
+<<<<<<< HEAD
     if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE") && (isset($_SESSION["verified-loggedin"])) && ($_SESSION["verified-loggedin"] == "TRUE")) {
+=======
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+>>>>>>> parent of cd6bc37... BIG UDPATE (ergens klein foutje kan nie tvinde)
       require("./content/products/deleted/deleted-undo.php");
     } else {
       require("./content/page/error.php");
@@ -204,17 +262,23 @@ switch($action) {
     break;
 
   case 'archive_deleted_product':
+<<<<<<< HEAD
     if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE") && (isset($_SESSION["verified-loggedin"])) && ($_SESSION["verified-loggedin"] == "TRUE")) {
+=======
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+>>>>>>> parent of cd6bc37... BIG UDPATE (ergens klein foutje kan nie tvinde)
       require("./content/products/deleted/archive-deleted.php");
     } else {
       require("./content/page/error.php");
     }
     break;
 
-
-  // CMS & CMS-ACTIONS
   case 'cms':
+<<<<<<< HEAD
     if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE") && (isset($_SESSION["verified-loggedin"])) && ($_SESSION["verified-loggedin"] == "TRUE")) {
+=======
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+>>>>>>> parent of cd6bc37... BIG UDPATE (ergens klein foutje kan nie tvinde)
       require("./content/cms/overview-cms.php");
     } else {
       require("./content/page/error.php");
@@ -222,7 +286,11 @@ switch($action) {
     break;
 
   case 'page_cms':
+<<<<<<< HEAD
     if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE") && (isset($_SESSION["verified-loggedin"])) && ($_SESSION["verified-loggedin"] == "TRUE")) {
+=======
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+>>>>>>> parent of cd6bc37... BIG UDPATE (ergens klein foutje kan nie tvinde)
       require("./content/cms/page.php");
     } else {
       require("./content/page/error.php");
@@ -230,7 +298,11 @@ switch($action) {
     break;
 
   case 'details_cms':
+<<<<<<< HEAD
     if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE") && (isset($_SESSION["verified-loggedin"])) && ($_SESSION["verified-loggedin"] == "TRUE")) {
+=======
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+>>>>>>> parent of cd6bc37... BIG UDPATE (ergens klein foutje kan nie tvinde)
       require("./content/cms/details.php");
     } else {
       require("./content/page/error.php");
@@ -238,7 +310,11 @@ switch($action) {
     break;
 
   case 'update_cms':
+<<<<<<< HEAD
     if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE") && (isset($_SESSION["verified-loggedin"])) && ($_SESSION["verified-loggedin"] == "TRUE")) {
+=======
+    if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+>>>>>>> parent of cd6bc37... BIG UDPATE (ergens klein foutje kan nie tvinde)
       require("./content/cms/update/update-form.php");
     } else {
       require("./content/page/error.php");

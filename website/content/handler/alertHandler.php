@@ -62,6 +62,7 @@ if((isset($_GET["al"])) && (!empty($_GET["al"])) && (isset($_GET["suc"])) && (!e
       require("./content/alerts/login.php");
       break;
 
+<<<<<<< HEAD
     case "verify":
       require("./content/alerts/verify.php");
       break;
@@ -70,6 +71,8 @@ if((isset($_GET["al"])) && (!empty($_GET["al"])) && (isset($_GET["suc"])) && (!e
       require("./content/alerts/already-exist.php");
       break;
 
+=======
+>>>>>>> parent of cd6bc37... BIG UDPATE (ergens klein foutje kan nie tvinde)
     default:
       require("./content/alerts/error.php");
       break;

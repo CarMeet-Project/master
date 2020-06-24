@@ -10,8 +10,12 @@ $customer_headers = "From: CarMeet Webshop " . $CarMeet_mail;
 
   switch ($_POST["MailName"]) {
     case "ContactForm":
+<<<<<<< HEAD
       $sendMail = TRUE;
       $contactForm = TRUE;
+=======
+      $dontSendMail = FALSE;
+>>>>>>> parent of cd6bc37... BIG UDPATE (ergens klein foutje kan nie tvinde)
 
       $subject = $_POST['subject'];
       $message = $_POST['message'];
@@ -25,7 +29,7 @@ $customer_headers = "From: CarMeet Webshop " . $CarMeet_mail;
       break;
     
     // case "OrderConfirm":
-    //   $sendMail = TRUE;
+    //   $dontSendMail = FALSE;
 
     //   $order_id = $_POST["id"];
     //   $product_id = $_POST["product_id"];
@@ -43,13 +47,16 @@ $customer_headers = "From: CarMeet Webshop " . $CarMeet_mail;
     //   break;
 
     default:
-      $sendMail = FALSE;
+      $dontSendMail = TRUE;
       break;
   }
 
+} else {
+  echo "er is een fout opgetreden";
+  exit();
 }
 
-if($sendMail == TRUE) {
+if($dontSendMail != TRUE) {
 
   // send mail to customer
   mail($customer_mail, $customer_subject, $customer_body, $customer_headers);
@@ -62,7 +69,11 @@ if($sendMail == TRUE) {
     header("Location: ../../index.php?action=contact&al=mail&suc=1");
   }
 } else {
+<<<<<<< HEAD
   header("Location: ../../index.php?action=welcome&al=mail&suc=2");
+=======
+  header("Location: ../../index.php?action=contact&al=mail&suc=0");
+>>>>>>> parent of cd6bc37... BIG UDPATE (ergens klein foutje kan nie tvinde)
 }
 
 

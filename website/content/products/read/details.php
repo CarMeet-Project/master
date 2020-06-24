@@ -34,7 +34,11 @@ if(($result===FALSE) || ($preparedquery->errno)) {
 
     while($row = $result->fetch_assoc()) { ?>
     <div class="floatR">
+<<<<<<< HEAD
       <?php if ((isset($_SESSION['admin-loggedin'])) && ($_SESSION['admin-loggedin'] == "TRUE") && (isset($_SESSION["verified-loggedin"])) && ($_SESSION["verified-loggedin"] == "TRUE")) { ?>
+=======
+      <?php if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) { ?>
+>>>>>>> parent of cd6bc37... BIG UDPATE (ergens klein foutje kan nie tvinde)
 
         <?php if($row["active"] === "TRUE") {?>
           <a class="btn btn-outline-danger" href="./index.php?action=delete_product&id=<?php echo $row["id"]; ?>">Deactiveren</a>
