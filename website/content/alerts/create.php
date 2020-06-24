@@ -15,7 +15,7 @@ if($succesFull == "FALSE") { ?>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
-  <strong>Succesvol</strong> aangemaakt
+  <strong>Succesvol</strong> aangemaakt, Controleer je <strong>Mail</strong> voor de verficatie code
 </div>
 
 <?php } ?>
