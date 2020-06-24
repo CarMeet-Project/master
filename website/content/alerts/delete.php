@@ -15,7 +15,7 @@ if($succesFull == "FALSE") { ?>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
-  <strong>Succesvol</strong> Uw gekozen meetup is verwijderd
+  <strong>Succesvol</strong> gedeactiveerd
 </div>
 
 <?php } ?>
