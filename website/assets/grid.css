@@ -17,6 +17,7 @@
   
   html {
     font-family: "Lucida Sans", sans-serif;
+	background-color: #2980b9;
   }
   
   
@@ -30,12 +31,12 @@
   }
   
   .color {
-    background-color: #fff;
+    background-color: #2980b9;
     color: black;
     text-align: center;
     font-size: 12px;
     padding: 15px;
-    border: white  solid 1px;
+
 	
   }
   
@@ -105,12 +106,23 @@
   }
   
 .carousel{
-
+	background-color: #33b5e5;
 	width: 60%;
     position: relative;          /* where the next element will be automatically positioned */
     display: inline-block;       /* causes element width to shrink to fit content */
     left: 50%;                   /* moves left side of image/element to center of parent element */
     transform: translate(-50%);  /* centers image/element on "left: 50%" position */
-	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
 
 }
+
+.copyright {
+	    background-color: #33b5e5;
+    color: black;
+    text-align: center;
+    font-size: 12px;
+    padding: 15px;
+	border: black solid 1px;
+
+	
+  }

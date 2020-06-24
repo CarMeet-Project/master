@@ -5,7 +5,7 @@ if($succesFull == "FALSE") { ?>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
-  Er is een fout opgetreden 
+  Er is een fout opgetreden
   <a href="#" class="alert-link"><strong>Klik hier</strong></a> om opnieuw te proberen.
 </div>
 

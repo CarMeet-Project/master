@@ -29,7 +29,11 @@
 </div>
 
 
+
 <div id="carouselExampleIndicators" class="carousel slide column-12 column-s-12 color ">
+
+<div id="carouselExampleIndicators" class="carousel slide column-12 column-s-12 color" data-ride="carousel">
+
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -63,7 +67,7 @@
 
 
 <div>
-  <div class="column-12 column-s-12 color">
+  <div class="column-12 column-s-12 copyright">
   Copyright &copy; 2020 All Rights Reserved by SmoothRoadCod
   </div>
 </div>

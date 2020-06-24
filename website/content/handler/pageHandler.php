@@ -18,9 +18,9 @@ switch($action) {
     require("./content/page/agenda.php");
     break;
 
-  case "info":
-    require("./content/page/information.php");
-    break;
+  // case "info":
+  //   require("./content/page/information.php");
+  //   break;
 
   case "aboutUs":
     require("./content/page/aboutUs.php");

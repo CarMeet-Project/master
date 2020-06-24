@@ -9,6 +9,3 @@ if($_GET["action"] !== "welcome") {
 }
 
 ?>
-
-
-
