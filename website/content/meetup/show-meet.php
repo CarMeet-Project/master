@@ -13,7 +13,11 @@
 
     while ($row = mysqli_fetch_assoc($result)) {
     echo "<div class='meetup'>";
+<<<<<<< HEAD
     echo "<a href='./index.php?action=meet_page&id=". $row["userid"] . "'>" . $row["header"] . "</a>" . "<p>" . $row["date"] . "</p>";
+=======
+    echo "<a href='./index.php?action=meet_page?id=". $row["userid"] . "'>" . $row["header"] . "</a>" . "<p>" . $row["date"] . "</p>";
+>>>>>>> parent of e13f348... meetups verwijderen
     echo "<p>" . $row["description"] . "</p>";
     echo "</div><br><br>";
     }
