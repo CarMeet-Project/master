@@ -3,7 +3,7 @@
 
     include("../../dbase/config.php");
 
-    $userId = $_SESSION["id"];
+    $userId = 1;
     $header = $_POST['header'];
     $discription = $_POST['discription'];
     $date = $_POST['date'];

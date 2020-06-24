@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 include("./dbase/config.php");
 include("./dbase/opendb.php");
 
@@ -57,5 +58,8 @@ if(($result === FALSE) || ($preparedquery->errno)) {
 $preparedquery->close();
 
 include("./dbase/closedb.php");
+=======
+    echo "Yolo";
+>>>>>>> parent of cd6bc37... BIG UDPATE (ergens klein foutje kan nie tvinde)
 
 ?>
