@@ -19,7 +19,7 @@
     if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
         if((isset($_SESSION["verified-loggedin"])) && ($_SESSION["verified-loggedin"] == "TRUE")) { ?>
 
-            <a class="btn btn-outline-success" href="./index.php?action=new_meet_request">Meet toevoegen</a>
+            <a class="btn btn-outline-success" href="./index.php?action=new_meet">Meet toevoegen</a>
             <a class="btn btn-outline-danger" href="./index.php?action=delete_meet">Meet verwijderen</a>
         <?php
         } else { ?>

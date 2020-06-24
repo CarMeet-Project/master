@@ -109,12 +109,12 @@ switch($action) {
     break;
 
     case "delete_meet":
-   if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
-     require("./content/page/delete-meet.php");
-   } else {
-     require("./content/page/error.php");
-   }
-   break;
+      if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin'] == "TRUE")) {
+        require("./content/page/delete-meet.php");
+      } else {
+        require("./content/page/error.php");
+      }
+      break;
 
     case "meet_page":
      require("./content/page/meetpage.php");
