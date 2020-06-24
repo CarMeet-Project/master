@@ -26,13 +26,6 @@
         </label>
         <input class="form-control" type="password" name="password" placeholder="Wachtwoord" id="password" required>
       </div>
-
-      <div class="form-group col">
-        <label>
-          <i class="fas fa-user-plus"></i>
-        </label>
-        <input class="btn btn-outline-success form-control" type="submit" id="submit" placeholder="Maak Account" value="Aanmaken">
-      </div>
     </div>
 
         
@@ -43,11 +36,11 @@
           <div class="col-8 form-control">
 
             <div class="col">
-              <p class="text-center form-control-plaintext">EXTRA KNOP MET TEKST</p>
+              <p class="text-center form-control-plaintext">Alle gegevens kloppen,</p>
             </div>
 
             <div class="col">
-              <a class="btn btn-outline-success form-control" href="#">KNOP</a>
+              <input class="btn btn-outline-success form-control" type="submit" id="submit" placeholder="Maak Account" value="Aanmaken">
             </div>
 
           </div>
