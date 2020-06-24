@@ -66,6 +66,10 @@ if((isset($_GET["al"])) && (!empty($_GET["al"])) && (isset($_GET["suc"])) && (!e
       require("./content/alerts/verify.php");
       break;
 
+    case "alrdy_exist":
+      require("./content/alerts/already-exist.php");
+      break;
+
     default:
       require("./content/alerts/error.php");
       break;

@@ -1,5 +1,5 @@
 <div class="container">
-  <form action="./content/user/account/verify-action.php" method="POST">
+  <form action="./content/admin/account/verify-action.php" method="POST">
     <?php echo "<input type=\"hidden\" name=\"id\" value=\"" . $_SESSION["id"] . "\">"; ?>
 
     <div class="row justify-content-md-center">

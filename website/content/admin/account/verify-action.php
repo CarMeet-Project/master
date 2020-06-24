@@ -18,7 +18,7 @@ $id = $_POST["id"];
 $verifyNumber_Post = $_POST["verifyNumber"];
 
 $query = "SELECT verify_number ";
-$query .= "FROM users ";
+$query .= "FROM accounts ";
 $query .= "WHERE id=? ";
 $query .= "LIMIT 1 ";
 
@@ -53,7 +53,7 @@ if($verifyNumber_DB == $verifyNumber_Post) {
   exit();
 }
 
-$query = "UPDATE users ";
+$query = "UPDATE accounts ";
 $query .= "SET verified=? ";
 $query .= "WHERE id=? ";
 $query .= "LIMIT 1 ";

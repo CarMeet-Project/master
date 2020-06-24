@@ -27,7 +27,7 @@ $password = $_POST["password"];
 $verfied = "FALSE";
 
 $query = "SELECT * ";
-$query .= "FROM users ";
+$query .= "FROM accounts ";
 $query .= "WHERE email=? ";
 $query .= "OR username=? ";
 
@@ -49,7 +49,7 @@ if(($result===FALSE) || ($preparedquery->errno)) {
 $preparedquery->close();
 
 
-$query = "INSERT INTO users ";
+$query = "INSERT INTO accounts ";
 $query .= "(email, ";
 $query .= "username, ";
 $query .= "password, ";
@@ -81,7 +81,7 @@ if($succied) {
   
   $subject = $username;
   $message = $verifyNumber;
-  $customer_subject = "Je verificatiecode voor je account: " . $subject;
+  $customer_subject = "Je verificatiecode voor je admin account: " . $subject;
   $customer_body = "Jou verificatie code is: " . $message . " ";
   $customer_body .= "Voer deze code in bij \"account\" onder het kopje \"verificatie\"";
   $customer_body .= " <br><br>Met Vriendelijke Groet,<br>Team CarMeet";

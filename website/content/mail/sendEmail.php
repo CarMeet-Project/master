@@ -11,6 +11,7 @@ $customer_headers = "From: CarMeet Webshop " . $CarMeet_mail;
   switch ($_POST["MailName"]) {
     case "ContactForm":
       $sendMail = TRUE;
+      $contactForm = TRUE;
 
       $subject = $_POST['subject'];
       $message = $_POST['message'];
@@ -53,10 +54,13 @@ if($sendMail == TRUE) {
   // send mail to customer
   mail($customer_mail, $customer_subject, $customer_body, $customer_headers);
 
-  // send mail to CarMeet team
-  mail($CarMeet_mail, $CarMeet_subject, $CarMeet_body, $CarMeet_headers);
+  if($contactForm) {
 
-  header("Location: ../../index.php?action=contact&al=mail&suc=1");
+    // send mail to CarMeet team
+    mail($CarMeet_mail, $CarMeet_subject, $CarMeet_body, $CarMeet_headers);
+    
+    header("Location: ../../index.php?action=contact&al=mail&suc=1");
+  }
 } else {
   header("Location: ../../index.php?action=welcome&al=mail&suc=2");
 }
