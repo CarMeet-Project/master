@@ -30,12 +30,12 @@
   }
   
   .color {
-    background-color: #0099cc;
-    color: #ffffff;
+    background-color: #fff;
+    color: black;
     text-align: center;
     font-size: 12px;
     padding: 15px;
-    border: black  solid 1px;
+    border: white  solid 1px;
   }
   
   /* For mobile phones: */
